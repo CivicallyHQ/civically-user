@@ -1,0 +1,31 @@
+{
+  "id": "welcome",
+  "name": "Welcome",
+  "background": "AliceBlue",
+  "save_submissions": true,
+  "after_signup": true,
+  "prompt_completion": true,
+  "multiple_submissions": true,
+  "steps": [
+    {
+      "id": "intro",
+      "key": "welcome.intro"
+    },
+    {
+      "id": "talk",
+      "key": "welcome.talk"
+    },
+    {
+      "id": "share",
+      "key": "welcome.share"
+    },
+    {
+      "id": "work",
+      "key": "welcome.work"
+    },
+    {
+      "id": "run",
+      "key": "welcome.run"
+    }
+  ]
+}

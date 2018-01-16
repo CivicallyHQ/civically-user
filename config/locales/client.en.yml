@@ -1,0 +1,8 @@
+en:
+  js:
+    topic:
+      invite_reply:
+        to_topic_blank: "Enter the username or email address of the person you'd like to invite to '{{topicTitle}}'."
+        to_topic_email: "You've entered an email address. We'll email an invitation that allows your friend to immediately reply to '{{topicTitle}}'."
+        to_topic_username: "You've entered a username. We'll send a notification with a link inviting them to '{{topicTitle}}'."
+        to_username: "Enter the username of the person you'd like to invite. We'll send a notification with a link inviting them to '{{topicTitle}}'."
