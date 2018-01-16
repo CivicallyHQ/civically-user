@@ -4,6 +4,14 @@
 # authors: Angus McLeod
 # url: https://github.com/civicallyhq/civically-user
 
+DiscourseEvent.on(:custom_wizard_ready) do
+  unless PluginStoreRow.exists?(plugin_name: 'custom_wizard', key: 'welcome')
+    CustomWizard::Wizard.add_wizard(File.read(File.join(
+      Rails.root, 'plugins', 'civically-user', 'config', 'wizards', 'welcome.json'
+    )))
+  end
+end
+
 after_initialize do
   DiscoursePluginRegistry.serialized_current_user_fields << "institution"
   DiscoursePluginRegistry.serialized_current_user_fields << "position"
@@ -61,18 +69,6 @@ after_initialize do
     def can_change_trust_level?(user)
       user && is_admin?
     end
-  end
-
-  if Rails.env.development?
-    SiteSetting.port = 3000
-    SiteSetting.bootstrap_mode_enabled = false
-    SiteSetting.show_create_topics_notice = false
-  end
-
-  unless PluginStoreRow.exists?(plugin_name: 'custom_wizard', key: 'welcome')
-    CustomWizard::Wizard.add_wizard(File.read(File.join(
-      Rails.root, 'plugins', 'civically-user', 'config', 'wizards', 'welcome.json'
-    )))
   end
 
   Admin::AdminController.class_eval do
