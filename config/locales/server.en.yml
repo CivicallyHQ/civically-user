@@ -23,28 +23,23 @@ en:
     talk:
       title: "Talk"
       description: |
-        <div>You can talk with people who live in your city or town.</div>
+        <div>You can talk with people who live in your city or town about government, legal or civic issues.</div>
         <div class="image-container">
-          <div>
+          <a href='/t/creating-an-question' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/question.svg'>
-            <label>Ask for help</label>
-          </div>
-          <div>
+            <span>Ask for help</span>
+          </a>
+          <a href='/t/finding-events' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/event.svg'>
-            <label>Go to an event</label>
-          </div>
-          <div>
-            <div class="image-container group">
-              <img class='x-small' src='%{base_url}/plugins/civically-user/images/group_1.svg'>
-              <img class='x-small' src='%{base_url}/plugins/civically-user/images/group_3.svg'>
-              <img class='x-small' src='%{base_url}/plugins/civically-user/images/group_2.svg'>
-              <img class='x-small' src='%{base_url}/plugins/civically-user/images/group_4.svg'>
-            </div>
-            <label>Join a group</label>
+            <span>Go to an event</span>
+          </a>
+          <a href='/t/rating-a-service' target='_blank'>
+            <img class='small' src='%{base_url}/plugins/civically-user/images/star.svg'>
+            <span>Review services</span>
           </div>
         </div>
         <div>
-          Click on the pictures to find out more.
+          Click on the pictures to find out more, or click 'Next' to continue.
         </div>
         <div class='tip'>
           <img src='%{base_url}/plugins/civically-user/images/person.svg'>
@@ -55,18 +50,23 @@ en:
       description: |
         <div>Share your skills and experience with your community.</div>
         <div class="image-container">
-          <div>
+          <a href='/t/build-an-app'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/computer_user.svg'>
-            <label>Build an app</label>
-          </div>
-          <div>
+            <span>Build an app</span>
+          </a>
+          <a href='/t/answer-a-question' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/teacher.svg'>
-            <label>Answer questions</label>
-          </div>
-          <div>
-            <img class='small' src='%{base_url}/plugins/civically-user/images/star.svg'>
-            <label>Review services</label>
-          </div>
+            <span>Answer questions</span>
+          </a>
+          <a href='/t/join-a-group' target='_blank'>
+            <div class="image-container group">
+              <img class='x-small' src='%{base_url}/plugins/civically-user/images/group_1.svg'>
+              <img class='x-small' src='%{base_url}/plugins/civically-user/images/group_3.svg'>
+              <img class='x-small' src='%{base_url}/plugins/civically-user/images/group_2.svg'>
+              <img class='x-small' src='%{base_url}/plugins/civically-user/images/group_4.svg'>
+            </div>
+            <span>Join a group</span>
+          </a>
         </div>
         <div class='tip'>
           <img src='%{base_url}/plugins/civically-user/images/person.svg'>
@@ -78,18 +78,18 @@ en:
         <div>Work with your government and civic organisations.</div>
         <div style='font-size:14px;font-style:italic;'>Coming Soon</div>
         <div class="image-container">
-          <div>
+          <a href='/t/how-co-production-of-services-can-work'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/worker.svg'>
-            <label>Help run programs</label>
-          </div>
-          <div>
+            <span>Help run programs</span>
+          </a>
+          <a href='/t/how-to-make-feedback-substantive'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/inbox.svg'>
-            <label>Give useful feedback</label>
-          </div>
-          <div>
+            <span>Give actionable feedback</span>
+          </a>
+          <a href='/t/how-policy-can-be-produced-collaboratively'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/graph.svg'>
-            <label>Help make policy</label>
-          </div>
+            <span>Help make policy</span>
+          </a>
         </div>
         <div class='tip'>
           <img src='%{base_url}/plugins/civically-user/images/person.svg'>
@@ -101,20 +101,20 @@ en:
       description: |
         <div>Plan, build and run Civically itself.</div>
         <div class="image-container">
-          <div>
+          <a href='/t/about-the-plans-category'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/plan.svg'>
-            <label>Help plan it</label>
-          </div>
-          <div>
+            <span>Help plan it</span>
+          </a>
+          <a href='/t/about-the-work-category'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/mechanic.svg'>
-            <label>Help build it</label>
-          </div>
-          <div>
+            <span>Help build it</span>
+          </a>
+          <a href='/t/moderator-policy'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/officer.svg'>
-            <label>Help run it</label>
-          </div>
+            <span>Help run it</span>
+          </a>
         </div>
         <div class='tip'>
           <img src='%{base_url}/plugins/civically-user/images/person.svg'>
-          <span>Tip: We plan to distribute profits we make with our contributors.</span>
+          <span>Tip: Your time is valuable. We plan to pay all of our contributors.</span>
         </div>
