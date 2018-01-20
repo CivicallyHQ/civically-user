@@ -25,7 +25,7 @@ en:
       description: |
         <div>You can talk with people who live in your city or town about government, legal or civic issues.</div>
         <div class="image-container">
-          <a href='/t/creating-an-question' target='_blank'>
+          <a href='/t/asking-a-question' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/question.svg'>
             <span>Ask for help</span>
           </a>
@@ -33,9 +33,9 @@ en:
             <img class='small' src='%{base_url}/plugins/civically-user/images/event.svg'>
             <span>Go to an event</span>
           </a>
-          <a href='/t/rating-a-service' target='_blank'>
+          <a href='/t/rating-a-service-or-place' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/star.svg'>
-            <span>Review services</span>
+            <span>Rate services</span>
           </div>
         </div>
         <div>
