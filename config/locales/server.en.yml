@@ -36,7 +36,7 @@ en:
           <a href='/t/rating-a-service-or-place' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/star.svg'>
             <span>Rate services</span>
-          </div>
+          </a>
         </div>
         <div>
           Click on the pictures to find out more, or click 'Next' to continue.
