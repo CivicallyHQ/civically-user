@@ -5,7 +5,7 @@ en:
       title: "Welcome to Civically!"
       description: |
         <div>
-          Civically gives you control over your relationship with your government, laws and community.
+          Civically gives you control over your relationship with government, the legal system and your community.
         </div>
         <div class='image-container'>
           <img class='small' src='%{base_url}/plugins/civically-user/images/question.svg'>
@@ -23,7 +23,7 @@ en:
     talk:
       title: "Talk"
       description: |
-        <div>Talk with people who live in your city or town about government, legal or civic issues.</div>
+        <div>Civically makes it easy to talk about civic issues with both regular folk and experts.</div>
         <div class="image-container">
           <a href='/t/asking-a-question' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/question.svg'>
@@ -48,7 +48,7 @@ en:
     share:
       title: "Share"
       description: |
-        <div>Share your skills and experience with your community.</div>
+        <div>Civically helps you share your skills, experience and insight with your community.</div>
         <div class="image-container">
           <a href='/t/apps-and-app-store' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/computer_user.svg'>
@@ -70,12 +70,12 @@ en:
         </div>
         <div class='tip'>
           <img src='%{base_url}/plugins/civically-user/images/person.svg'>
-          <span>Tip: We are planning to launch an app store in the near future.</span>
+          <span>Tip: We are planning to launch the world's first civic app store in the near future.</span>
         </div>
     work:
       title: "Work"
       description: |
-        <div>Work with your government and civic organisations.</div>
+        <div>Civically makes it possible for you to work directly with your government and civic organisations.</div>
         <div style='font-size:14px;font-style:italic;'>Coming Soon</div>
         <div class="image-container">
           <a href='/t/coproduction-of-civic-services' target='_blank'>
@@ -93,13 +93,12 @@ en:
         </div>
         <div class='tip'>
           <img src='%{base_url}/plugins/civically-user/images/person.svg'>
-          <span>Tip: If you work in a government or civic organization,
-          <a href='mailto:contact@civically.io' target='_blank'>get in touch</a>.</span>
+          <span>Tip: If you work in a government or civic organization, <a href='mailto:contact@civically.io' target='_blank'>get in touch</a>.</span>
         </div>
     run:
       title: "Run"
       description: |
-        <div>Plan, build and run Civically itself.</div>
+        <div>You can even help plan, build and run Civically itself.</div>
         <div class="image-container">
           <a href='/t/about-the-plans-category' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/plan.svg'>
