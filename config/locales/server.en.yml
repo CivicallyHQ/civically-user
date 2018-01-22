@@ -50,15 +50,15 @@ en:
       description: |
         <div>Share your skills and experience with your community.</div>
         <div class="image-container">
-          <a href='/t/build-an-app'>
+          <a href='/t/apps-and-app-store' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/computer_user.svg'>
             <span>Build an app</span>
           </a>
-          <a href='/t/answer-a-question' target='_blank'>
+          <a href='/t/questions-policy' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/teacher.svg'>
             <span>Answer questions</span>
           </a>
-          <a href='/t/join-a-group' target='_blank'>
+          <a href='/t/joining-a-group' target='_blank'>
             <div class="image-container group">
               <img class='x-small' src='%{base_url}/plugins/civically-user/images/group_1.svg'>
               <img class='x-small' src='%{base_url}/plugins/civically-user/images/group_3.svg'>
@@ -78,15 +78,15 @@ en:
         <div>Work with your government and civic organisations.</div>
         <div style='font-size:14px;font-style:italic;'>Coming Soon</div>
         <div class="image-container">
-          <a href='/t/how-co-production-of-services-can-work'>
+          <a href='/t/coproduction-of-civic-services' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/worker.svg'>
             <span>Help run programs</span>
           </a>
-          <a href='/t/how-to-make-feedback-substantive'>
+          <a href='/t/coproduction-of-civic-services' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/inbox.svg'>
             <span>Give actionable feedback</span>
           </a>
-          <a href='/t/how-policy-can-be-produced-collaboratively'>
+          <a href='/t/coproduction-of-civic-services' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/graph.svg'>
             <span>Help make policy</span>
           </a>
@@ -101,15 +101,15 @@ en:
       description: |
         <div>Plan, build and run Civically itself.</div>
         <div class="image-container">
-          <a href='/t/about-the-plans-category'>
+          <a href='/t/about-the-plans-category' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/plan.svg'>
             <span>Help plan it</span>
           </a>
-          <a href='/t/about-the-work-category'>
+          <a href='/t/about-the-work-category' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/mechanic.svg'>
             <span>Help build it</span>
           </a>
-          <a href='/t/moderator-policy'>
+          <a href='/t/moderator-policy' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/officer.svg'>
             <span>Help run it</span>
           </a>
