@@ -5,7 +5,7 @@ en:
       title: "Welcome to Civically!"
       description: |
         <div>
-          Civically is where you engage with your community, use public services and solve problems.
+          Civically gives you control over your relationship with your government, laws and community.
         </div>
         <div class='image-container'>
           <img class='small' src='%{base_url}/plugins/civically-user/images/question.svg'>
@@ -23,7 +23,7 @@ en:
     talk:
       title: "Talk"
       description: |
-        <div>You can talk with people who live in your city or town about government, legal or civic issues.</div>
+        <div>Talk with people who live in your city or town about government, legal or civic issues.</div>
         <div class="image-container">
           <a href='/t/asking-a-question' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/question.svg'>
@@ -94,7 +94,7 @@ en:
         <div class='tip'>
           <img src='%{base_url}/plugins/civically-user/images/person.svg'>
           <span>Tip: If you work in a government or civic organization,
-          <a href='contact'>get in touch</a>.</span>
+          <a href='mailto:contact@civically.io' target='_blank'>get in touch</a>.</span>
         </div>
     run:
       title: "Run"
