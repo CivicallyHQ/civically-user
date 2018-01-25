@@ -1,4 +1,32 @@
 en:
+  invite_forum_mailer:
+    title: "Invite Forum Mailer"
+    subject_template: "%{inviter_name} has invited you to join %{site_domain_name}"
+    text_body_template: |
+      %{inviter_name} has invited you to join %{site_title}.
+
+      %{site_description}
+
+      If you are interested, click the link below:
+
+      %{invite_link}
+
+  custom_invite_forum_mailer:
+    title: "Custom Invite Forum Mailer"
+    subject_template: "%{inviter_name} has invited you to join %{site_domain_name}"
+    text_body_template: |
+      %{inviter_name} has invited you to join %{site_title}.
+
+      %{site_description}
+
+      They added this note to their invitation:
+
+      > %{user_custom_message}
+
+      If you are interested, click the link below:
+
+      %{invite_link}
+
   welcome:
     title: "Welcome to Civically"
     intro:
