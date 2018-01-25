@@ -33,7 +33,7 @@ en:
       title: "Welcome to Civically!"
       description: |
         <div>
-          Civically gives you control over your relationship with government, the legal system and your community.
+          Civically brings balance to your relationship with government, the legal system and your community.
         </div>
         <div class='image-container'>
           <img class='small' src='%{base_url}/plugins/civically-user/images/question.svg'>
