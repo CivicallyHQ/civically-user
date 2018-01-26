@@ -33,7 +33,7 @@ en:
       title: "Welcome to Civically!"
       description: |
         <div>
-          Civically brings balance to your relationship with government, the legal system and your community.
+          Civically makes government, law and community easier.
         </div>
         <div class='image-container'>
           <img class='small' src='%{base_url}/plugins/civically-user/images/question.svg'>
@@ -51,7 +51,7 @@ en:
     talk:
       title: "Talk"
       description: |
-        <div>Civically makes it easy to talk about civic issues with both regular folk and experts.</div>
+        <div>Civically makes it easy to talk about civic issues.</div>
         <div class="image-container">
           <a href='/t/asking-a-question' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/question.svg'>
@@ -76,7 +76,7 @@ en:
     share:
       title: "Share"
       description: |
-        <div>Civically helps you share your skills, experience and insight with your community.</div>
+        <div>Civically makes it easy to share your experience and insight.</div>
         <div class="image-container">
           <a href='/t/apps-and-app-store' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/computer_user.svg'>
@@ -98,12 +98,12 @@ en:
         </div>
         <div class='tip'>
           <img src='%{base_url}/plugins/civically-user/images/person.svg'>
-          <span>Tip: We are planning to launch the world's first civic app store in the near future.</span>
+          <span>Tip: We are planning to launch the world's first civic app store.</span>
         </div>
     work:
       title: "Work"
       description: |
-        <div>Civically makes it possible for you to work directly with your government and civic organisations.</div>
+        <div>Civically makes it easy to work with your government and civic organisations.</div>
         <div style='font-size:14px;font-style:italic;'>Coming Soon</div>
         <div class="image-container">
           <a href='/t/coproduction-of-civic-services' target='_blank'>
@@ -112,7 +112,7 @@ en:
           </a>
           <a href='/t/coproduction-of-civic-services' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/inbox.svg'>
-            <span>Give actionable feedback</span>
+            <span>Give real feedback</span>
           </a>
           <a href='/t/coproduction-of-civic-services' target='_blank'>
             <img class='small' src='%{base_url}/plugins/civically-user/images/graph.svg'>
