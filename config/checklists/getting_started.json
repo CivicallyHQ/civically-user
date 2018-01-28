@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "id": "complete_welcome",
+      "checked": false,
+      "checkable": false,
+      "active": true
+    },
+    {
+      "id": "set_place",
+      "checked": false,
+      "checkable": false,
+      "active": true
+    }
+  ]
+}

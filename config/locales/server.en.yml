@@ -1,4 +1,19 @@
 en:
+  checklist:
+    getting_started:
+      complete_welcome:
+        title: "Complete the Welcome Wizard"
+        detail: "<a href='/w/welcome' class='p-link'>Click here to go back to the Welcome Wizard.</a>"
+      set_place:
+        title: "Set your place"
+        detail: "<a href='/place/set' class='p-link'>Click here to set your place.</a>"
+      pass_petition:
+        title: "Get your place petition passed"
+        detail: "Your place petition needs to pass so you can use Civically. <a href='/' class='p-link'>Click here to help gather support</a>."
+      elect_moderator:
+        title: "Elect your place moderator"
+        detail: "Before you can start posting, your place needs a moderator. <a href='%{mod_url}'>Click here to help elect one</a>."
+
   invite_forum_mailer:
     title: "Invite Forum Mailer"
     subject_template: "%{inviter_name} has invited you to join %{site_domain_name}"

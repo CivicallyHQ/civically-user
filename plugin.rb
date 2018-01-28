@@ -10,6 +10,14 @@ DiscourseEvent.on(:custom_wizard_ready) do
       Rails.root, 'plugins', 'civically-user', 'config', 'wizards', 'welcome.json'
     )))
   end
+
+  CustomWizard::Builder.add_step_handler('welcome') do |builder|
+    if builder.updater && builder.updater.step && builder.updater.step.id === 'run'
+      user = builder.wizard.user
+      CivicallyChecklist::Checklist.toggle_checked(user, 'complete_welcome', true)
+      CivicallyChecklist::Checklist.toggle_active(user, 'set_place', true)
+    end
+  end
 end
 
 after_initialize do
@@ -139,6 +147,39 @@ after_initialize do
       end
 
       render_serialized(users, AdminUserListSerializer)
+    end
+  end
+
+  module ::CivicallyUser
+    class Engine < ::Rails::Engine
+      engine_name "civically_user"
+      isolate_namespace CivicallyUser
+    end
+  end
+
+  class CivicallyUser::Setup
+    def self.checklist(user)
+      CivicallyApp::App.add_app(user, 'action_checklist', 'right')
+      list = ::JSON.parse(File.read(File.join(
+        Rails.root, 'plugins', 'civically-user', 'config', 'checklists', 'getting_started.json'
+      )))
+      list['items'].each do |item|
+        item['title'] = I18n.t("checklist.getting_started.#{item['id']}.title")
+        item['detail'] = I18n.t("checklist.getting_started.#{item['id']}.detail")
+      end
+      CivicallyChecklist::Checklist.set_list(user, list['items'])
+    end
+  end
+
+  DiscourseEvent.on(:user_created) do |user|
+    CivicallyUser::Setup.checklist(user)
+  end
+
+  ## migration - to be removed
+
+  User.all.each do |user|
+    unless PluginStoreRow.where(plugin_name: 'action_checklist', key: user.id).exists?
+      CivicallyUser::Setup.checklist(user)
     end
   end
 end
