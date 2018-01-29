@@ -173,10 +173,4 @@ after_initialize do
   DiscourseEvent.on(:user_created) do |user|
     CivicallyUser::Setup.checklist(user)
   end
-
-  ## migration - to be removed
-
-  User.all.human_users.each do |user|
-    CivicallyChecklist::Checklist.update_item(user, 'complete_welcome', detail: I18n.t("checklist.getting_started.complete_welcome.detail"))
-  end
 end
