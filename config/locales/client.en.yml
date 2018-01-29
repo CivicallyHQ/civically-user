@@ -1,5 +1,7 @@
 en:
   js:
+    invite:
+      custom_message_template_forum: "Hey, you should join Civically!"
     topic:
       invite_reply:
         to_topic_blank: "Enter the username or email address of the person you'd like to invite to '{{topicTitle}}'."
