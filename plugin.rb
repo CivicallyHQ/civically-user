@@ -14,7 +14,7 @@ DiscourseEvent.on(:custom_wizard_ready) do
   CustomWizard::Builder.add_step_handler('welcome') do |builder|
     if builder.updater && builder.updater.step && builder.updater.step.id === 'run'
       user = builder.wizard.user
-      CivicallyChecklist::Checklist.toggle_checked(user, 'complete_welcome', true)
+      CivicallyChecklist::Checklist.update_item(user, 'complete_welcome', checked: true)
     end
   end
 end
@@ -177,12 +177,6 @@ after_initialize do
   ## migration - to be removed
 
   User.all.human_users.each do |user|
-    unless PluginStoreRow.where(plugin_name: 'action_checklist', key: user.id).exists?
-      CivicallyUser::Setup.checklist(user)
-
-      if user.custom_fields['place_topic_id']
-        CivicallyPlace::User.add_pass_petition_to_checklist(user)
-      end
-    end
+    CivicallyChecklist::Checklist.update_item(user, 'complete_welcome', detail: I18n.t("checklist.getting_started.complete_welcome.detail"))
   end
 end
