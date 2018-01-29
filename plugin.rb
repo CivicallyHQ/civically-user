@@ -15,7 +15,6 @@ DiscourseEvent.on(:custom_wizard_ready) do
     if builder.updater && builder.updater.step && builder.updater.step.id === 'run'
       user = builder.wizard.user
       CivicallyChecklist::Checklist.toggle_checked(user, 'complete_welcome', true)
-      CivicallyChecklist::Checklist.toggle_active(user, 'set_place', true)
     end
   end
 end
