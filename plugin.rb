@@ -177,9 +177,13 @@ after_initialize do
 
   ## migration - to be removed
 
-  User.all.each do |user|
+  User.all.human_users.each do |user|
     unless PluginStoreRow.where(plugin_name: 'action_checklist', key: user.id).exists?
       CivicallyUser::Setup.checklist(user)
+
+      if user.custom_fields['place_topic_id']
+        CivicallyPlace::User.add_pass_petition_to_checklist(user)
+      end
     end
   end
 end
