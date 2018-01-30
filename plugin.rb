@@ -5,15 +5,40 @@
 # url: https://github.com/civicallyhq/civically-user
 
 DiscourseEvent.on(:custom_wizard_ready) do
-  unless PluginStoreRow.exists?(plugin_name: 'custom_wizard', key: 'welcome')
-    CustomWizard::Wizard.add_wizard(File.read(File.join(
-      Rails.root, 'plugins', 'civically-user', 'config', 'wizards', 'welcome.json'
-    )))
-  end
+  PluginStore.remove('custom_wizard', 'welcome')
+
+  CustomWizard::Wizard.add_wizard(File.read(File.join(
+    Rails.root, 'plugins', 'civically-user', 'config', 'wizards', 'welcome.json'
+  )))
 
   CustomWizard::Builder.add_step_handler('welcome') do |builder|
-    if builder.updater && builder.updater.step && builder.updater.step.id === 'run'
+    if builder.updater && builder.updater.step && builder.updater.step.id === 'civically'
       user = builder.wizard.user
+      previous_steps = builder.submissions.last || {}
+      final_step = builder.updater.fields.to_h
+      data = previous_steps.merge(final_step)
+
+      if data.present?
+        welcome_bookmark_ids = YAML.safe_load(File.read(File.join(
+          Rails.root, 'plugins', 'civically-user', 'config', 'welcome_bookmark_ids.yml'
+        )))
+        bookmarks = []
+        data.each do |k, v|
+          if v === 'true'
+            topic_id = welcome_bookmark_ids[k]
+
+            if topic = Topic.find_by(id: topic_id)
+              post = topic.ordered_posts.first
+
+              unless PostAction.exists?(post_id: post.id, user_id: user.id, post_action_type_id: PostActionType.types[:bookmark])
+                PostAction.act(user, post, PostActionType.types[:bookmark])
+                CivicallyUser::User.add_unread_list(user, 'bookmarks')
+              end
+            end
+          end
+        end
+      end
+
       CivicallyChecklist::Checklist.update_item(user, 'complete_welcome', checked: true)
     end
   end
@@ -24,6 +49,7 @@ after_initialize do
   DiscoursePluginRegistry.serialized_current_user_fields << "position"
   add_to_serializer(:current_user, :institution) { object.custom_fields["institution"] }
   add_to_serializer(:current_user, :position) { object.custom_fields["position"] }
+  add_to_serializer(:current_user, :unread_lists) { object.unread_lists }
 
   require_dependency 'guardian'
   Guardian.class_eval do
@@ -149,28 +175,10 @@ after_initialize do
     end
   end
 
-  module ::CivicallyUser
-    class Engine < ::Rails::Engine
-      engine_name "civically_user"
-      isolate_namespace CivicallyUser
-    end
-  end
-
-  class CivicallyUser::Setup
-    def self.checklist(user)
-      CivicallyApp::App.add_app(user, 'action_checklist', 'right')
-      list = ::JSON.parse(File.read(File.join(
-        Rails.root, 'plugins', 'civically-user', 'config', 'checklists', 'getting_started.json'
-      )))
-      list['items'].each do |item|
-        item['title'] = I18n.t("checklist.getting_started.#{item['id']}.title")
-        item['detail'] = I18n.t("checklist.getting_started.#{item['id']}.detail")
-      end
-      CivicallyChecklist::Checklist.set_list(user, list['items'])
-    end
-  end
+  load File.expand_path('../lib/user.rb', __FILE__)
+  load File.expand_path('../jobs/bulk_unread_lists_update.rb', __FILE__)
 
   DiscourseEvent.on(:user_created) do |user|
-    CivicallyUser::Setup.checklist(user)
+    CivicallyUser::User.checklist(user)
   end
 end

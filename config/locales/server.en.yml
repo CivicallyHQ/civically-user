@@ -38,119 +38,69 @@ en:
 
   welcome:
     title: "Welcome to Civically"
+
     intro:
       title: "Welcome to Civically!"
-      description: |
-        <div>
-          Civically makes government, law and community easier.
-        </div>
-        <div class='image-container'>
-          <img class='small' src='%{base_url}/plugins/civically-user/images/question.svg'>
-          <img class='small' src='%{base_url}/plugins/civically-user/images/computer_user.svg'>
-          <img class='small' src='%{base_url}/plugins/civically-user/images/worker.svg'>
-          <img class='small' src='%{base_url}/plugins/civically-user/images/officer.svg'>
-        </div>
-        <div>
-          This wizard will go through the things you can do here.
-        </div>
-        <div class='tip'>
-          <img src='%{base_url}/plugins/civically-user/images/person.svg'>
-          <span>Tip: This will take about 1 minute.</span>
-        </div>
-    talk:
-      title: "Talk"
-      description: |
-        <div>Civically makes it easy to talk about civic issues.</div>
-        <div class="image-container">
-          <a href='/t/asking-a-question' target='_blank'>
-            <img class='small' src='%{base_url}/plugins/civically-user/images/question.svg'>
-            <span>Ask for help</span>
-          </a>
-          <a href='/t/finding-events' target='_blank'>
-            <img class='small' src='%{base_url}/plugins/civically-user/images/event.svg'>
-            <span>Go to an event</span>
-          </a>
-          <a href='/t/rating-a-service-or-place' target='_blank'>
-            <img class='small' src='%{base_url}/plugins/civically-user/images/star.svg'>
-            <span>Rate services</span>
-          </a>
-        </div>
-        <div>
-          Click on the pictures to find out more, or click 'Next' to continue.
-        </div>
-        <div class='tip'>
-          <img src='%{base_url}/plugins/civically-user/images/person.svg'>
-          <span>Tip: We don't sell your data or run adverts.</span>
-        </div>
-    share:
-      title: "Share"
-      description: |
-        <div>Civically makes it easy to share your experience and insight.</div>
-        <div class="image-container">
-          <a href='/t/apps-and-app-store' target='_blank'>
-            <img class='small' src='%{base_url}/plugins/civically-user/images/computer_user.svg'>
-            <span>Build an app</span>
-          </a>
-          <a href='/t/questions-policy' target='_blank'>
-            <img class='small' src='%{base_url}/plugins/civically-user/images/teacher.svg'>
-            <span>Answer questions</span>
-          </a>
-          <a href='/t/joining-a-group' target='_blank'>
-            <div class="image-container group">
-              <img class='x-small' src='%{base_url}/plugins/civically-user/images/group_1.svg'>
-              <img class='x-small' src='%{base_url}/plugins/civically-user/images/group_3.svg'>
-              <img class='x-small' src='%{base_url}/plugins/civically-user/images/group_2.svg'>
-              <img class='x-small' src='%{base_url}/plugins/civically-user/images/group_4.svg'>
-            </div>
-            <span>Join a group</span>
-          </a>
-        </div>
-        <div class='tip'>
-          <img src='%{base_url}/plugins/civically-user/images/person.svg'>
-          <span>Tip: We are planning to launch the world's first civic app store.</span>
-        </div>
-    work:
-      title: "Work"
-      description: |
-        <div>Civically makes it easy to work with your government and civic organisations.</div>
-        <div style='font-size:14px;font-style:italic;'>Coming Soon</div>
-        <div class="image-container">
-          <a href='/t/coproduction-of-civic-services' target='_blank'>
-            <img class='small' src='%{base_url}/plugins/civically-user/images/worker.svg'>
-            <span>Help run programs</span>
-          </a>
-          <a href='/t/coproduction-of-civic-services' target='_blank'>
-            <img class='small' src='%{base_url}/plugins/civically-user/images/inbox.svg'>
-            <span>Give real feedback</span>
-          </a>
-          <a href='/t/coproduction-of-civic-services' target='_blank'>
-            <img class='small' src='%{base_url}/plugins/civically-user/images/graph.svg'>
-            <span>Help make policy</span>
-          </a>
-        </div>
-        <div class='tip'>
-          <img src='%{base_url}/plugins/civically-user/images/person.svg'>
-          <span>Tip: If you work in a government or civic organization, <a href='mailto:contact@civically.io' target='_blank'>get in touch</a>.</span>
-        </div>
-    run:
-      title: "Run"
-      description: |
-        <div>You can even help plan, build and run Civically itself.</div>
-        <div class="image-container">
-          <a href='/t/about-the-plans-category' target='_blank'>
-            <img class='small' src='%{base_url}/plugins/civically-user/images/plan.svg'>
-            <span>Help plan it</span>
-          </a>
-          <a href='/t/about-the-work-category' target='_blank'>
-            <img class='small' src='%{base_url}/plugins/civically-user/images/mechanic.svg'>
-            <span>Help build it</span>
-          </a>
-          <a href='/t/moderator-policy' target='_blank'>
-            <img class='small' src='%{base_url}/plugins/civically-user/images/officer.svg'>
-            <span>Help run it</span>
-          </a>
-        </div>
-        <div class='tip'>
-          <img src='%{base_url}/plugins/civically-user/images/person.svg'>
-          <span>Tip: Your time is valuable. We plan to pay all of our contributors.</span>
-        </div>
+      description: "This guide explains how Civically makes government, law and community easier."
+      tip:
+        description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'>This will take about 1 minute. As you go through, tick <input type='checkbox'> what you're interested in."
+
+    government:
+      title: "Dealing with government is hard"
+      description: "When you deal with government, it's sometimes hard to know where to start."
+      solution:
+        description: "With Civically you can:"
+      question:
+        description: "<img src='%{base_url}/plugins/civically-user/images/question.svg'>Ask regular folk or experts for help"
+      rating:
+        description: "<img src='%{base_url}/plugins/civically-user/images/star.svg'>Rate services and give feedback"
+      gov_apps:
+        description: "<img src='%{base_url}/plugins/civically-user/images/computer_user.svg'>Use government apps <i>(comming soon)</i>"
+
+    law:
+      title: "Law is out of reach"
+      description: "Lawyers are expensive, laws are hard to understand and the legal system seems unfair."
+      solution:
+        description: "With Civically you can:"
+      tips:
+        description: "<img src='%{base_url}/plugins/civically-user/images/document_tip.svg'>Get tips and pointers"
+      experts:
+        description: "<img src='%{base_url}/plugins/civically-user/images/teacher.svg'>Get access to experts"
+      law_apps:
+        description: "<img src='%{base_url}/plugins/civically-user/images/computer_user.svg'>Use legal apps <i>(comming soon)</i>"
+
+    community:
+      title: "Social Networks aren't communities"
+      description: "Social networks are about getting attention at all costs."
+      solution:
+        description: "Civically is about getting involved in your community:"
+      events:
+        description: "<img src='%{base_url}/plugins/civically-user/images/event.svg'>Go to community events"
+      help:
+        description: "<img src='%{base_url}/plugins/civically-user/images/mechanic.svg'>Help others figure out problems"
+      contribute:
+        description: "<img src='%{base_url}/plugins/civically-user/images/plan.svg'>Help make government and law better"
+
+    civically:
+      title: "Civically is a shared effort"
+      description: "Civically is open source, open planned and run for the benefit of your community."
+      solution:
+        description: "You can play an important role:"
+      plan:
+        description: "<img src='%{base_url}/plugins/civically-user/images/person_with_chart.svg'>Help plan Civically"
+      build:
+        description: "<img src='%{base_url}/plugins/civically-user/images/worker.svg'>Help build Civically"
+      run:
+        description: "<img src='%{base_url}/plugins/civically-user/images/officer.svg'>Help run Civically"
+
+    submit:
+      title: "Getting Started"
+      description: "We're excited to see what you'll contribute to Civically."
+      solution:
+        description: "Here's a few tips:"
+      checklist:
+        description: "<img src='%{base_url}/plugins/civically-user/images/tick.svg'>We've made a checklist to help you get started. Look for it on the right."
+      bookmarks:
+        description: "<img src='%{base_url}/plugins/civically-user/images/bookmark.svg'>The things you ticked have been bookmarked. Also look for them on the right."
+      thanks:
+        description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'>Thanks for signing up. We hope you find Civically a rewarding experience."
