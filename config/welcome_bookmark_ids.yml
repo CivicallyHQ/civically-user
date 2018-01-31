@@ -1,12 +1,12 @@
-question: 26
-rating: 27
-gov_apps: 16
-tips:
-experts:
-law_apps: 17
-events: 42
-help: 44
-contribute: 45
-plan: 14
-build: 13
-run: 25
+question: 26 ## https://civically.io/t/asking-a-question/26
+rating: 27 ## https://civically.io/t/rating-a-service-or-place/27
+gov_apps: 16 ## https://civically.io/t/apps-and-app-store/16
+tips: 26 ## https://civically.io/t/asking-a-question/26
+experts: 62 ## https://civically.io/t/finding-experts/62
+law_apps: 16 ## https://civically.io/t/apps-and-app-store/16
+events: 42 ## https://civically.io/t/finding-events/42
+help: 44 ## https://civically.io/t/questions-policy/44
+contribute: 45 ## https://civically.io/t/coproduction-of-civic-services/45
+plan: 14 ## https://civically.io/t/about-the-plans-category/14
+build: 13 ## https://civically.io/t/about-the-work-category/13
+run: 25 ## https://civically.io/t/moderator-policy/25

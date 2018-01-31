@@ -41,7 +41,7 @@ en:
 
     intro:
       title: "Welcome to Civically!"
-      description: "This guide explains how Civically makes government, law and community easier."
+      description: "This guide explains how Civically makes government simpler, law accessible and community stronger."
       tip:
         description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'>This will take about 1 minute. As you go through, tick <input type='checkbox'> what you're interested in."
 
@@ -51,7 +51,7 @@ en:
       solution:
         description: "With Civically you can:"
       question:
-        description: "<img src='%{base_url}/plugins/civically-user/images/question.svg'>Ask regular folk or experts for help"
+        description: "<img src='%{base_url}/plugins/civically-user/images/question.svg'>Ask others or experts for help"
       rating:
         description: "<img src='%{base_url}/plugins/civically-user/images/star.svg'>Rate services and give feedback"
       gov_apps:
@@ -98,9 +98,9 @@ en:
       description: "We're excited to see what you'll contribute to Civically."
       solution:
         description: "Here's a few tips:"
-      checklist:
-        description: "<img src='%{base_url}/plugins/civically-user/images/tick.svg'>We've made a checklist to help you get started. Look for it on the right."
       bookmarks:
-        description: "<img src='%{base_url}/plugins/civically-user/images/bookmark.svg'>The things you ticked have been bookmarked. Also look for them on the right."
+        description: "<img src='%{base_url}/plugins/civically-user/images/bookmark.svg'>We've bookmarked the things you ticked so you can read about them later."
+      slow:
+        description: "<img src='%{base_url}/plugins/civically-user/images/shoot.svg'>Take it slowly at first. There's a lot you can do here. Go piece by piece."
       thanks:
         description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'>Thanks for signing up. We hope you find Civically a rewarding experience."

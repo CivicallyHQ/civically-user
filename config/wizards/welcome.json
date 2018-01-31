@@ -138,13 +138,13 @@
           "type": "text-only"
         },
         {
-          "id": "checklist",
-          "key": "welcome.submit.checklist",
+          "id": "bookmarks",
+          "key": "welcome.submit.bookmarks",
           "type": "text-only"
         },
         {
-          "id": "bookmarks",
-          "key": "welcome.submit.bookmarks",
+          "id": "slow",
+          "key": "welcome.submit.slow",
           "type": "text-only"
         },
         {
