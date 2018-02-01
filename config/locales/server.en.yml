@@ -55,7 +55,7 @@ en:
       rating:
         description: "<img src='%{base_url}/plugins/civically-user/images/star.svg'>Rate services and give feedback"
       gov_apps:
-        description: "<img src='%{base_url}/plugins/civically-user/images/computer_user.svg'>Use government apps <i>(comming soon)</i>"
+        description: "<img src='%{base_url}/plugins/civically-user/images/computer_user.svg'>Use government apps <i>(coming soon)</i>"
 
     law:
       title: "Law is out of reach"
@@ -67,7 +67,7 @@ en:
       experts:
         description: "<img src='%{base_url}/plugins/civically-user/images/teacher.svg'>Get access to experts"
       law_apps:
-        description: "<img src='%{base_url}/plugins/civically-user/images/computer_user.svg'>Use legal apps <i>(comming soon)</i>"
+        description: "<img src='%{base_url}/plugins/civically-user/images/computer_user.svg'>Use legal apps <i>(coming soon)</i>"
 
     community:
       title: "Social Networks aren't communities"
