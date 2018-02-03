@@ -1,4 +1,3 @@
-
 class ::User
   def unread_lists
     if custom_fields['unread_lists']
@@ -26,7 +25,6 @@ end
 
 class CivicallyUser::User
   def self.checklist(user)
-    CivicallyApp::App.add_app(user, 'action_checklist', 'right')
     list = ::JSON.parse(File.read(File.join(
       Rails.root, 'plugins', 'civically-user', 'config', 'checklists', 'getting_started.json'
     )))

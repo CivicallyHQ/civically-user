@@ -1,0 +1,72 @@
+.civically-user {
+  .widget-title {
+    width: 100%;
+  }
+
+  ul {
+    margin: 0;
+
+    button {
+      border: none;
+      display: initial;
+      background: $secondary;
+      padding: 4px 6px;
+      cursor: initial;
+
+      &:hover {
+        background: $tertiary-low;
+        color: $primary;
+      }
+
+      .checkable {
+        cursor: pointer;
+      }
+
+      &.check-title {
+        cursor: pointer;
+      }
+    }
+
+    .checklist-item {
+      display: flex;
+      margin: 2px 0;
+
+      &.next * {
+        background-color: $highlight-low !important;
+      }
+
+      &.inactive * {
+        color: $primary-low-mid !important;
+        background-color: $secondary !important;
+        cursor: initial !important;
+      }
+
+      &.checked {
+        button:hover {
+          background: $success-low;
+        }
+      }
+    }
+
+    .check-toggle {
+      padding: 4px 6px;
+      line-height: 16px;
+
+      .fa-check-circle {
+        color: $success;
+      }
+    }
+
+    .right-contents {
+      flex: 1;
+
+      .check-title, .check-detail {
+        text-align: left;
+      }
+
+      .check-detail {
+        padding: 4px 6px;
+      }
+    }
+  }
+}
