@@ -25,8 +25,9 @@ class CivicallyChecklist::Checklist
 
   def self.add_item(user, item, index = nil)
     list = get_list(user)
+    item = item.with_indifferent_access
 
-    unless list.include?(item)
+    unless list.any? { |i| i["id"] === item[:id] }
       if index
         list.insert(index, item)
       else
