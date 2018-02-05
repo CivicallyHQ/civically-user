@@ -51,7 +51,7 @@ en:
       solution:
         description: "With Civically you can:"
       question:
-        description: "<img src='%{base_url}/plugins/civically-user/images/question.svg'>Ask others or experts for help"
+        description: "<img src='%{base_url}/plugins/civically-user/images/question.svg'>Ask your peers or experts for help"
       rating:
         description: "<img src='%{base_url}/plugins/civically-user/images/star.svg'>Rate services and give feedback"
       gov_apps:
