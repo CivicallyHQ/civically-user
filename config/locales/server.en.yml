@@ -41,66 +41,64 @@ en:
 
     intro:
       title: "Welcome to Civically!"
-      description: "This guide explains how Civically makes government simpler, law accessible and community stronger."
+      description: "This guide explains what you can do on Civically."
       tip:
-        description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'>This will take about 1 minute. As you go through, tick <input type='checkbox'> what you're interested in."
+        description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'><i>This will take about 1 minute.</i>"
 
+    tick_tip:
+      description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'><i>Tick <input type='checkbox'> what interests you and we'll <i class='fa fa-bookmark'> bookmark discussions for you.</i>"
     government:
-      title: "Dealing with government is hard"
-      description: "When you deal with government, it's sometimes hard to know where to start."
+      title: "Dealing with government can be hard."
+      description: "Sometimes it's hard to know where to start."
       solution:
-        description: "With Civically you can:"
+        description: "With Civically you can"
       question:
-        description: "<img src='%{base_url}/plugins/civically-user/images/question.svg'>Ask your peers or experts for help"
+        description: "<img src='%{base_url}/plugins/civically-user/images/question.svg'>Ask people for help"
       rating:
-        description: "<img src='%{base_url}/plugins/civically-user/images/star.svg'>Rate services and give feedback"
+        description: "<img src='%{base_url}/plugins/civically-user/images/star.svg'>Rate your experience"
       gov_apps:
-        description: "<img src='%{base_url}/plugins/civically-user/images/computer_user.svg'>Use government apps <i>(coming soon)</i>"
+        description: "<img src='%{base_url}/plugins/civically-user/images/computer_user.svg'>Use apps and bots (coming soon)"
 
     law:
-      title: "Law is out of reach"
-      description: "Lawyers are expensive, laws are hard to understand and the legal system seems unfair."
+      title: "Law is out of reach."
+      description: "Lawyers are expensive and laws are complicated."
       solution:
-        description: "With Civically you can:"
+        description: "With Civically you can"
       tips:
-        description: "<img src='%{base_url}/plugins/civically-user/images/document_tip.svg'>Get tips and pointers"
+        description: "<img src='%{base_url}/plugins/civically-user/images/document_tip.svg'>Get legal tips"
       experts:
-        description: "<img src='%{base_url}/plugins/civically-user/images/teacher.svg'>Get access to experts"
+        description: "<img src='%{base_url}/plugins/civically-user/images/student.svg'>Talk to legal experts"
       law_apps:
-        description: "<img src='%{base_url}/plugins/civically-user/images/computer_user.svg'>Use legal apps <i>(coming soon)</i>"
+        description: "<img src='%{base_url}/plugins/civically-user/images/computer_user.svg'>Use legal apps and bots (coming soon)"
 
     community:
-      title: "Social Networks aren't communities"
-      description: "Social networks are about getting attention at all costs."
+      title: "Social networks are built to sell adverts."
+      description: "They are designed to entice your attention."
       solution:
-        description: "Civically is about getting involved in your community:"
+        description: "Civically is designed to help your community."
       events:
-        description: "<img src='%{base_url}/plugins/civically-user/images/event.svg'>Go to community events"
+        description: "<img src='%{base_url}/plugins/civically-user/images/event.svg'>Check out community events"
       help:
         description: "<img src='%{base_url}/plugins/civically-user/images/mechanic.svg'>Help others figure out problems"
       contribute:
-        description: "<img src='%{base_url}/plugins/civically-user/images/plan.svg'>Help make government and law better"
+        description: "<img src='%{base_url}/plugins/civically-user/images/thumbsup.svg'>Help make government and law better"
 
     civically:
-      title: "Civically is a shared effort"
-      description: "Civically is open source, open planned and run for the benefit of your community."
+      title: "Civically is a shared effort."
+      description: "Civically is open planned, open source and run collaboratively."
       solution:
-        description: "You can play an important role:"
+        description: "Your thoughts matter"
       plan:
-        description: "<img src='%{base_url}/plugins/civically-user/images/person_with_chart.svg'>Help plan Civically"
+        description: "<img src='%{base_url}/plugins/civically-user/images/person_with_chart.svg'>Share your ideas"
       build:
-        description: "<img src='%{base_url}/plugins/civically-user/images/worker.svg'>Help build Civically"
+        description: "<img src='%{base_url}/plugins/civically-user/images/worker.svg'>Contribute some code"
       run:
-        description: "<img src='%{base_url}/plugins/civically-user/images/officer.svg'>Help run Civically"
+        description: "<img src='%{base_url}/plugins/civically-user/images/officer.svg'>Help moderate discussions"
+      tip:
+        description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'><i>We plan to pay our contributors</i>"
 
     submit:
-      title: "Getting Started"
+      title: "Let's get started."
       description: "We're excited to see what you'll contribute to Civically."
-      solution:
-        description: "Here's a few tips:"
-      bookmarks:
-        description: "<img src='%{base_url}/plugins/civically-user/images/bookmark.svg'>We've bookmarked the things you ticked so you can read about them later."
-      slow:
-        description: "<img src='%{base_url}/plugins/civically-user/images/shoot.svg'>Take it slowly at first. There's a lot you can do here. Go piece by piece."
       thanks:
-        description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'>Thanks for signing up. We hope you find Civically a rewarding experience."
+        description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'><i>Thanks for signing up. We're happy to have you!</i>"

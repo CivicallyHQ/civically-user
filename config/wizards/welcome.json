@@ -43,6 +43,11 @@
           "id": "gov_apps",
           "key": "welcome.government.gov_apps",
           "type": "checkbox"
+        },
+        {
+          "id": "tip",
+          "key": "welcome.tick_tip",
+          "type": "text-only"
         }
       ]
     },
@@ -70,6 +75,11 @@
           "id": "law_apps",
           "key": "welcome.law.law_apps",
           "type": "checkbox"
+        },
+        {
+          "id": "tip",
+          "key": "welcome.tick_tip",
+          "type": "text-only"
         }
       ]
     },
@@ -97,13 +107,18 @@
           "id": "contribute",
           "key": "welcome.community.contribute",
           "type": "checkbox"
+        },
+        {
+          "id": "tip",
+          "key": "welcome.tick_tip",
+          "type": "text-only"
         }
       ]
     },
     {
       "id": "civically",
       "key": "welcome.civically",
-      "banner": "/plugins/civically-user/images/happy_group.png",
+      "banner": "/plugins/civically-user/images/collaborate.png",
       "fields": [
         {
           "id": "solution",
@@ -124,6 +139,11 @@
           "id": "run",
           "key": "welcome.civically.run",
           "type": "checkbox"
+        },
+        {
+          "id": "tip",
+          "key": "welcome.civically.tip",
+          "type": "text-only"
         }
       ]
     },
@@ -132,21 +152,6 @@
       "key": "welcome.submit",
       "banner": "/plugins/civically-user/images/imagination.png",
       "fields": [
-        {
-          "id": "solution",
-          "key": "welcome.submit.solution",
-          "type": "text-only"
-        },
-        {
-          "id": "bookmarks",
-          "key": "welcome.submit.bookmarks",
-          "type": "text-only"
-        },
-        {
-          "id": "slow",
-          "key": "welcome.submit.slow",
-          "type": "text-only"
-        },
         {
           "id": "thanks",
           "key": "welcome.submit.thanks",
