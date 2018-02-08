@@ -35,7 +35,7 @@ createWidget('checklist-item', {
   },
 
   html(attrs, state) {
-    const icon = state && state.checked ? 'check-circle' : 'circle-o';
+    const icon = state && state.checked ? 'check' : 'arrow-right';
     let className = 'check-toggle';
     let contents = [];
 

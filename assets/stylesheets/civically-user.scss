@@ -31,8 +31,16 @@
       display: flex;
       margin: 2px 0;
 
-      &.next * {
-        background-color: $highlight-low !important;
+      &.next {
+        box-shadow: 0 2px 2px rgba(0,0,0,0.25);
+        border: 1px solid $primary-low;
+        border-top: 1px solid $primary-low !important;
+        border-radius: 4px;
+        background: $highlight-low !important;
+
+        button {
+          background: transparent;
+        }
       }
 
       &.inactive * {
@@ -52,8 +60,12 @@
       padding: 4px 6px;
       line-height: 16px;
 
-      .fa-check-circle {
+      .fa-check {
         color: $success;
+      }
+
+      .fa-arrow-right {
+        color: $danger-low;
       }
     }
 
