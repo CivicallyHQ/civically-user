@@ -195,7 +195,7 @@ export default createWidget('civically-user', {
 
     if (state.currentType === 'bookmarks') {
       widgetListContents.push(h('div.widget-list-controls', this.attach('link', {
-        className: 'p-link no-underline',
+        className: 'p-link',
         href: `/bookmarks`,
         label: 'civically.list.more'
       })));
