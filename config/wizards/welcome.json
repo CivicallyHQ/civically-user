@@ -22,7 +22,7 @@
     {
       "id": "government",
       "key": "welcome.government",
-      "banner": "/plugins/civically-user/images/government_frustrated.png",
+      "banner": "/plugins/civically-user/images/confusion.png",
       "fields": [
         {
           "id": "solution",

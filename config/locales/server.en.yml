@@ -46,10 +46,10 @@ en:
         description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'><i>This will take about 1 minute.</i>"
 
     tick_tip:
-      description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'><i>Tick <input type='checkbox'> what interests you and we'll <i class='fa fa-bookmark'> bookmark discussions for you.</i>"
+      description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'><i>Tick <input type='checkbox'> what interests you.</i>"
     government:
       title: "Dealing with government can be hard."
-      description: "Sometimes it's hard to know where to start."
+      description: "Sometimes it's hard to know the right thing to do."
       solution:
         description: "With Civically you can"
       question:
@@ -77,11 +77,11 @@ en:
       solution:
         description: "Civically is designed to help your community."
       events:
-        description: "<img src='%{base_url}/plugins/civically-user/images/event.svg'>Check out community events"
+        description: "<img src='%{base_url}/plugins/civically-user/images/event.svg'>Get involved in your community"
       help:
         description: "<img src='%{base_url}/plugins/civically-user/images/mechanic.svg'>Help others figure out problems"
       contribute:
-        description: "<img src='%{base_url}/plugins/civically-user/images/thumbsup.svg'>Help make government and law better"
+        description: "<img src='%{base_url}/plugins/civically-user/images/judge.svg'>Help make government and law better"
 
     civically:
       title: "Civically is a shared effort."
