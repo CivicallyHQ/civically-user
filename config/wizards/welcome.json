@@ -153,8 +153,8 @@
       "banner": "/plugins/civically-user/images/imagination.png",
       "fields": [
         {
-          "id": "thanks",
-          "key": "welcome.submit.thanks",
+          "id": "tip",
+          "key": "welcome.submit.tip",
           "type": "text-only"
         }
       ]
