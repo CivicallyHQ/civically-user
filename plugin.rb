@@ -7,9 +7,7 @@
 register_asset 'stylesheets/civically-user.scss'
 
 DiscourseEvent.on(:custom_wizard_ready) do
-  ## 'migration' to be removed
-  PluginStore.remove('custom_wizard', 'welcome')
-
+  ## 'migration' to be wrapped in conditional
   CustomWizard::Wizard.add_wizard(File.read(File.join(
     Rails.root, 'plugins', 'civically-user', 'config', 'wizards', 'welcome.json'
   )))
