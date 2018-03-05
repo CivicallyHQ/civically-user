@@ -63,4 +63,24 @@ after_initialize do
   DiscourseEvent.on(:user_created) do |user|
     CivicallyUser::User.checklist(user)
   end
+
+  require_dependency 'application_controller'
+  class ::ApplicationController
+    def set_locale
+      if !current_user
+        if params[:change_locale]
+          locale = params[:change_locale]
+        elsif SiteSetting.set_locale_from_accept_language_header
+          locale = locale_from_header
+        else
+          locale = SiteSetting.default_locale
+        end
+      else
+        locale = current_user.effective_locale
+      end
+
+      I18n.locale = I18n.locale_available?(locale) ? locale : :en
+      I18n.ensure_all_loaded!
+    end
+  end
 end

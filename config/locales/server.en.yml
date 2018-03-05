@@ -37,68 +37,43 @@ en:
       %{invite_link}
 
   welcome:
-    title: "Welcome to Civically"
-
+    title: "Welcome to Civically!"
+    check:
+      description: "Tick what you want to know more about."
     intro:
       title: "Welcome to Civically!"
-      description: "This guide explains what you can do on Civically."
-      tip:
-        description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'><i>This will take about 1 minute.</i>"
-
-    tick_tip:
-      description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'><i>Tick <input type='checkbox'> what interests you.</i>"
-    government:
-      title: "Dealing with government can be hard."
-      description: "Sometimes it's hard to know the right thing to do."
-      solution:
-        description: "With Civically you can:"
+      description: "Civically is a platform for **Government**, **Law** and **Community**."
+      guide:
+        description: "This short introduction will take less than a minute."
+    people:
+      title: "Where people help people."
+      description: "Civically is where you ask for help with **Government**, **Legal** and **Community** issues."
       question:
-        description: "<img src='%{base_url}/plugins/civically-user/images/question.svg'><span>Ask people for help.</span>"
-      rating:
-        description: "<img src='%{base_url}/plugins/civically-user/images/star.svg'><span>Rate your experience.</span>"
-      gov_apps:
-        description: "<img src='%{base_url}/plugins/civically-user/images/computer_user.svg'><span>Use apps and bots (coming soon).</span>"
-
-    law:
-      title: "Law is out of reach."
-      description: "Lawyers are expensive and laws are complicated."
-      solution:
-        description: "With Civically you can:"
-      tips:
-        description: "<img src='%{base_url}/plugins/civically-user/images/document_tip.svg'><span>Get legal tips.</span>"
-      experts:
-        description: "<img src='%{base_url}/plugins/civically-user/images/student.svg'><span>Talk to legal experts.</span>"
-      law_apps:
-        description: "<img src='%{base_url}/plugins/civically-user/images/computer_user.svg'><span>Use legal apps and bots (coming soon).</span>"
-
-    community:
-      title: "Social networks are built to sell adverts."
-      description: "They are designed to entice your attention."
-      solution:
-        description: "Civically is designed to help your community."
-      events:
-        description: "<img src='%{base_url}/plugins/civically-user/images/event.svg'><span>Get involved in your community.</span>"
+        description: "How to ask a question."
       help:
-        description: "<img src='%{base_url}/plugins/civically-user/images/mechanic.svg'><span>Help others figure out problems.</span>"
+        description: "How to help others."
+      involved:
+        description: "How to spread the word about what's going on."
+    tech:
+      title: "The best civic technology, for everyone."
+      description: "Civically will give everybody access to the best **Government**, **Legal** and **Community** technology."
+      discussion:
+        description: "We use alogrithims to create healthy communities, not angry tribes."
+      apps:
+        description: "We're launching the world's first civic app store."
+      empower:
+        description: "Our technology empowers, rather than exploits."
+    shared:
+      title: "Built with you, not for you."
+      description: "Our users (that's you) play a real role in running Civically."
       contribute:
-        description: "<img src='%{base_url}/plugins/civically-user/images/judge.svg'><span>Help make government and law better.</span>"
-
-    civically:
-      title: "Civically is a shared effort."
-      description: "Civically is open planned, open source and run collaboratively."
-      solution:
-        description: "Your thoughts matter:"
-      plan:
-        description: "<img src='%{base_url}/plugins/civically-user/images/person_with_chart.svg'><span>Share your ideas.</span>"
-      build:
-        description: "<img src='%{base_url}/plugins/civically-user/images/worker.svg'><span>Contribute some code.</span>"
+        description: "How to contribute ideas or code."
       run:
-        description: "<img src='%{base_url}/plugins/civically-user/images/officer.svg'><span>Help moderate discussions.</span>"
-      tip:
-        description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'><i>We plan to pay our contributors.</i>"
-
+        description: "How to contribute to management."
+      compensate:
+        description: "How we plan to share profits with contributors."
     submit:
       title: "Let's get started."
-      description: "We're excited to see what you'll contribute to Civically."
-      tip:
-        description: "<img src='%{base_url}/plugins/civically-user/images/person.svg'><i>Thanks for signing up. We're happy to have you!</i>"
+      description: "Together we're going to build better, fairer communities."
+      bookmarks:
+        description: "Topics you ticked are bookmarked on the next page, on the right."

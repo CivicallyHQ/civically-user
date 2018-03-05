@@ -65,7 +65,6 @@ export default {
       });
     }
 
-
     // overriding method to pass title to translations when inviting new users from a topic.
     InviteController.reopen({
       @computed('isMessage', 'invitingToTopic', 'emailOrUsername', 'isPrivateTopic', 'isAdmin', 'canInviteViaEmail')

@@ -1,5 +1,7 @@
 en:
   js:
+    create_account:
+      locale: "Language"
     invite:
       custom_message_template_forum: "Hey, you should join Civically!"
     topic:

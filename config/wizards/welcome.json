@@ -1,7 +1,7 @@
 {
   "id": "welcome",
   "name": "Welcome",
-  "background": "AliceBlue",
+  "background": "url('/plugins/civically-user/images/background.png') center / cover #FEFDF9 no-repeat",
   "save_submissions": true,
   "multiple_submissions": true,
   "after_signup": true,
@@ -10,151 +10,110 @@
     {
       "id": "intro",
       "key": "welcome.intro",
-      "banner": "/plugins/civically-user/images/smooth_sailing.png",
       "fields": [
         {
-          "id": "tip",
-          "key": "welcome.intro.tip",
+          "id": "guide",
+          "key": "welcome.intro.guide",
+          "image": "/images/emoji/twitter/clock4.png",
           "type": "text-only"
         }
       ]
     },
     {
-      "id": "government",
-      "key": "welcome.government",
-      "banner": "/plugins/civically-user/images/confusion.png",
+      "id": "people",
+      "key": "welcome.people",
       "fields": [
         {
-          "id": "solution",
-          "key": "welcome.government.solution",
+          "id": "check",
+          "key": "welcome.check",
           "type": "text-only"
         },
         {
           "id": "question",
-          "key": "welcome.government.question",
-          "type": "checkbox"
-        },
-        {
-          "id": "rating",
-          "key": "welcome.government.rating",
-          "type": "checkbox"
-        },
-        {
-          "id": "gov_apps",
-          "key": "welcome.government.gov_apps",
-          "type": "checkbox"
-        },
-        {
-          "id": "tip",
-          "key": "welcome.tick_tip",
-          "type": "text-only"
-        }
-      ]
-    },
-    {
-      "id": "law",
-      "key": "welcome.law",
-      "banner": "/plugins/civically-user/images/law_unfair.png",
-      "fields": [
-        {
-          "id": "solution",
-          "key": "welcome.law.solution",
-          "type": "text-only"
-        },
-        {
-          "id": "tips",
-          "key": "welcome.law.tips",
-          "type": "checkbox"
-        },
-        {
-          "id": "experts",
-          "key": "welcome.law.experts",
-          "type": "checkbox"
-        },
-        {
-          "id": "law_apps",
-          "key": "welcome.law.law_apps",
-          "type": "checkbox"
-        },
-        {
-          "id": "tip",
-          "key": "welcome.tick_tip",
-          "type": "text-only"
-        }
-      ]
-    },
-    {
-      "id": "community",
-      "key": "welcome.community",
-      "banner": "/plugins/civically-user/images/social_machine.png",
-      "fields": [
-        {
-          "id": "solution",
-          "key": "welcome.community.solution",
-          "type": "text-only"
-        },
-        {
-          "id": "events",
-          "key": "welcome.community.events",
+          "key": "welcome.people.question",
+          "image": "/images/emoji/twitter/raising_hand_man/2.png",
           "type": "checkbox"
         },
         {
           "id": "help",
-          "key": "welcome.community.help",
+          "key": "welcome.people.help",
+          "image": "/images/emoji/twitter/woman_mechanic/2.png",
           "type": "checkbox"
         },
         {
-          "id": "contribute",
-          "key": "welcome.community.contribute",
+          "id": "involved",
+          "key": "welcome.people.involved",
+          "image": "/images/emoji/twitter/mega.png",
           "type": "checkbox"
-        },
-        {
-          "id": "tip",
-          "key": "welcome.tick_tip",
-          "type": "text-only"
         }
       ]
     },
     {
-      "id": "civically",
-      "key": "welcome.civically",
-      "banner": "/plugins/civically-user/images/collaborate.png",
+      "id": "tech",
+      "key": "welcome.tech",
       "fields": [
         {
-          "id": "solution",
-          "key": "welcome.civically.solution",
+          "id": "check",
+          "key": "welcome.check",
           "type": "text-only"
         },
         {
-          "id": "plan",
-          "key": "welcome.civically.plan",
+          "id": "discussion",
+          "key": "welcome.tech.discussion",
+          "image": "/images/emoji/twitter/heart.png",
           "type": "checkbox"
         },
         {
-          "id": "build",
-          "key": "welcome.civically.build",
+          "id": "apps",
+          "key": "welcome.tech.apps",
+          "image": "/images/emoji/twitter/earth_africa.png",
+          "type": "checkbox"
+        },
+        {
+          "id": "empower",
+          "key": "welcome.tech.empower",
+          "image": "/images/emoji/twitter/muscle/4.png",
+          "type": "checkbox"
+        }
+      ]
+    },
+    {
+      "id": "shared",
+      "key": "welcome.shared",
+      "fields": [
+        {
+          "id": "check",
+          "key": "welcome.check",
+          "type": "text-only"
+        },
+        {
+          "id": "contribute",
+          "key": "welcome.shared.contribute",
+          "image": "/images/emoji/twitter/woman_technologist/4.png",
           "type": "checkbox"
         },
         {
           "id": "run",
-          "key": "welcome.civically.run",
+          "key": "welcome.shared.run",
+          "image": "/images/emoji/twitter/policewoman/6.png",
           "type": "checkbox"
         },
         {
-          "id": "tip",
-          "key": "welcome.civically.tip",
-          "type": "text-only"
+          "id": "compensate",
+          "key": "welcome.shared.compensate",
+          "image": "/images/emoji/twitter/dollar.png",
+          "type": "checkbox"
         }
       ]
     },
     {
       "id": "submit",
       "key": "welcome.submit",
-      "banner": "/plugins/civically-user/images/imagination.png",
       "fields": [
         {
-          "id": "tip",
-          "key": "welcome.submit.tip",
+          "id": "bookmarks",
+          "key": "welcome.submit.bookmarks",
+          "image": "/images/emoji/twitter/bookmark.png",
           "type": "text-only"
         }
       ]
