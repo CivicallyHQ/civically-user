@@ -42,9 +42,9 @@ en:
       description: "Tick what you want to know more about."
     intro:
       title: "Welcome to Civically!"
-      description: "Civically is a platform for **Government**, **Law** and **Community**."
+      description: "Civically is where people help people solve civic problems."
       guide:
-        description: "This short introduction will take less than a minute."
+        description: "This short introduction to Civicially will take less than a minute."
     people:
       title: "Where people help people."
       description: "Civically is where you ask for help with **Government**, **Legal** and **Community** issues."
