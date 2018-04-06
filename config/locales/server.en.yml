@@ -3,10 +3,10 @@ en:
     getting_started:
       complete_welcome:
         title: "Complete the Welcome Wizard"
-        detail: "<a href='/w/welcome' class='p-link' target='_blank'>Go back to the Welcome Wizard.</a>"
+        detail: "[Go back to the Welcome Wizard.](/w/welcome)"
       set_place:
         title: "Set your place"
-        detail: "<a href='/place/set' class='p-link'>Set your place.</a>"
+        detail: "[Go to the place set page.](/place/set)"
 
   invite_forum_mailer:
     title: "Invite Forum Mailer"
@@ -38,13 +38,11 @@ en:
 
   welcome:
     title: "Welcome to Civically!"
-    check:
-      description: "Tick what you want to know more about."
     intro:
       title: "Welcome to Civically!"
-      description: "Civically is where people help people solve civic problems."
+      description: This short introduction will take less than a minute.
       guide:
-        description: "This short introduction to Civicially will take less than a minute."
+        description: "As you go, tick what you want to know more about."
     people:
       title: "Where people help people."
       description: "Civically is where you ask for help with **Government**, **Legal** and **Community** issues."
@@ -52,28 +50,21 @@ en:
         description: "How to ask a question."
       help:
         description: "How to help others."
-      involved:
-        description: "How to spread the word about what's going on."
     tech:
-      title: "The best civic technology, for everyone."
-      description: "Civically will give everybody access to the best **Government**, **Legal** and **Community** technology."
+      title: "On a healthy and helpful public platform."
+      description: "Civically uses powerful technology to create a healthy and helpful public platform."
       discussion:
-        description: "We use alogrithims to create healthy communities, not angry tribes."
+        description: "How we build healthy public space."
       apps:
-        description: "We're launching the world's first civic app store."
-      empower:
-        description: "Our technology empowers, rather than exploits."
+        description: "Our plans for world's first civic app store."
     shared:
       title: "Built with you, not for you."
-      description: "Our users (that's you) play a real role in running Civically."
+      description: "Civically is owned by a non-profit and our users play a real role in running things."
       contribute:
-        description: "How to contribute ideas or code."
-      run:
-        description: "How to contribute to management."
+        description: "How to contribute ideas, code or time."
       compensate:
         description: "How we plan to share profits with contributors."
     submit:
-      title: "Let's get started."
-      description: "Together we're going to build better, fairer communities."
+      title: "Let's get started!"
       bookmarks:
-        description: "Topics you ticked are bookmarked on the next page, on the right."
+        description: "Topics you ticked are bookmarked on the next page."

@@ -78,6 +78,14 @@
 
       .check-detail {
         padding: 4px 6px;
+
+        p {
+          margin: 0;
+
+          a {
+            @extend .p-link;
+          }
+        }
       }
     }
   }

@@ -13,7 +13,7 @@ DiscourseEvent.on(:custom_wizard_ready) do
   )))
 
   CustomWizard::Builder.add_step_handler('welcome') do |builder|
-    if builder.updater && builder.updater.step && builder.updater.step.id === 'civically'
+    if builder.updater && builder.updater.step && builder.updater.step.id === 'submit'
       user = builder.wizard.user
       previous_steps = builder.submissions.last || {}
       final_step = builder.updater.fields.to_h
@@ -61,7 +61,11 @@ after_initialize do
   load File.expand_path('../jobs/bulk_unread_lists_update.rb', __FILE__)
 
   DiscourseEvent.on(:user_created) do |user|
-    CivicallyUser::User.checklist(user)
+    CivicallyUser::User.create_checklist(user)
+    CivicallyApp::App.add(user, 'civically-user', enabled: true, side: 'right', order: 1)
+    CivicallyApp::App.add(user, 'civically-site', enabled: false, side: 'right', order: 2)
+    CivicallyApp::App.add(user, 'civically-navigation', enabled: false, side: 'left', order: 1)
+    CivicallyApp::App.add(user, 'civically-place', enabled: false, side: 'left', order: 2)
   end
 
   require_dependency 'application_controller'

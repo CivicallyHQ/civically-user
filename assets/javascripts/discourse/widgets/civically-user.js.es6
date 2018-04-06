@@ -1,8 +1,9 @@
 import { createWidget } from 'discourse/widgets/widget';
+import { createAppWidget } from 'discourse/plugins/civically-app/discourse/widgets/app-widget';
 import RawHtml from 'discourse/widgets/raw-html';
 import DiscourseURL from 'discourse/lib/url';
 import { iconNode } from 'discourse-common/lib/icon-library';
-import { emojiUnescape } from 'discourse/lib/text';
+import { cookAsync } from 'discourse/lib/text';
 import { ajax } from 'discourse/lib/ajax';
 import { buildTitle, clearUnreadList } from 'discourse/plugins/civically-layout/discourse/lib/utilities';
 import { h } from 'virtual-dom';
@@ -31,6 +32,7 @@ createWidget('checklist-item', {
       checked: attrs.item.checked,
       checkable: attrs.item.checkable,
       active: attrs.item.active,
+      cookedDetail: null
     };
   },
 
@@ -38,6 +40,12 @@ createWidget('checklist-item', {
     const icon = state && state.checked ? 'check' : 'arrow-right';
     let className = 'check-toggle';
     let contents = [];
+
+    if (state.cookedDetail === null) {
+      cookAsync(attrs.item.detail).then((cooked) => {
+        state.cookedDetail = cooked;
+      });
+    }
 
     if (state && state.checkable) {
       className += ' checkable';
@@ -60,7 +68,7 @@ createWidget('checklist-item', {
 
     if (state && state.showDetail) {
       rightContents.push(h('div.check-detail',
-        new RawHtml({ html: `<span>${emojiUnescape(attrs.item.detail)}</span>` })
+        new RawHtml({ html: `${state.cookedDetail}` })
       ));
     }
 
@@ -98,10 +106,7 @@ createWidget('bookmark-item', {
   }
 });
 
-export default createWidget('civically-user', {
-  tagName: 'div.civically-user.widget-container',
-  buildKey: () => 'civically-user',
-
+export default createAppWidget('civically-user', {
   defaultState() {
     return {
       currentType: 'checklist',
@@ -144,7 +149,7 @@ export default createWidget('civically-user', {
 
   buildBookmarks() {
     const bookmarks = this.state.bookmarks;
-    let list = [ h('div.no-items', I18n.t('civically.list.none')) ];
+    let list = [ h('div.no-items', I18n.t('app.civically_site.list.none')) ];
 
     if (bookmarks.length > 0) {
       list = bookmarks.map((topic) => {
@@ -155,11 +160,8 @@ export default createWidget('civically-user', {
     return h('ul', list);
   },
 
-  html(attrs, state) {
-    const user = this.currentUser;
-
+  content(attrs, state) {
     let contents = [
-      h('div.widget-label', user.username),
       h('div.widget-multi-title', [
         buildTitle(this, 'user', 'checklist'),
         buildTitle(this, 'user', 'bookmarks')
@@ -197,7 +199,7 @@ export default createWidget('civically-user', {
       widgetListContents.push(h('div.widget-list-controls', this.attach('link', {
         className: 'p-link',
         href: `/bookmarks`,
-        label: 'civically.list.more'
+        label: 'app.civically_site.list.more'
       })));
     }
 

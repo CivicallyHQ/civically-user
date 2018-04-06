@@ -6,6 +6,7 @@
   "multiple_submissions": true,
   "after_signup": true,
   "prompt_completion": true,
+  "theme":"Civically Wizards",
   "steps": [
     {
       "id": "intro",
@@ -14,7 +15,7 @@
         {
           "id": "guide",
           "key": "welcome.intro.guide",
-          "image": "/images/emoji/twitter/clock4.png",
+          "image": "/images/emoji/twitter/ballot_box_with_check.png",
           "type": "text-only"
         }
       ]
@@ -23,11 +24,6 @@
       "id": "people",
       "key": "welcome.people",
       "fields": [
-        {
-          "id": "check",
-          "key": "welcome.check",
-          "type": "text-only"
-        },
         {
           "id": "question",
           "key": "welcome.people.question",
@@ -39,12 +35,6 @@
           "key": "welcome.people.help",
           "image": "/images/emoji/twitter/woman_mechanic/2.png",
           "type": "checkbox"
-        },
-        {
-          "id": "involved",
-          "key": "welcome.people.involved",
-          "image": "/images/emoji/twitter/mega.png",
-          "type": "checkbox"
         }
       ]
     },
@@ -52,11 +42,6 @@
       "id": "tech",
       "key": "welcome.tech",
       "fields": [
-        {
-          "id": "check",
-          "key": "welcome.check",
-          "type": "text-only"
-        },
         {
           "id": "discussion",
           "key": "welcome.tech.discussion",
@@ -68,12 +53,6 @@
           "key": "welcome.tech.apps",
           "image": "/images/emoji/twitter/earth_africa.png",
           "type": "checkbox"
-        },
-        {
-          "id": "empower",
-          "key": "welcome.tech.empower",
-          "image": "/images/emoji/twitter/muscle/4.png",
-          "type": "checkbox"
         }
       ]
     },
@@ -82,20 +61,9 @@
       "key": "welcome.shared",
       "fields": [
         {
-          "id": "check",
-          "key": "welcome.check",
-          "type": "text-only"
-        },
-        {
           "id": "contribute",
           "key": "welcome.shared.contribute",
           "image": "/images/emoji/twitter/woman_technologist/4.png",
-          "type": "checkbox"
-        },
-        {
-          "id": "run",
-          "key": "welcome.shared.run",
-          "image": "/images/emoji/twitter/policewoman/6.png",
           "type": "checkbox"
         },
         {

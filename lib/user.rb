@@ -24,7 +24,7 @@ Discourse::Application.routes.append do
 end
 
 class CivicallyUser::User
-  def self.checklist(user)
+  def self.create_checklist(user)
     list = ::JSON.parse(File.read(File.join(
       Rails.root, 'plugins', 'civically-user', 'config', 'checklists', 'getting_started.json'
     )))
