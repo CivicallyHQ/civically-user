@@ -13,8 +13,8 @@
       "key": "welcome.intro",
       "fields": [
         {
-          "id": "guide",
-          "key": "welcome.intro.guide",
+          "id": "tip",
+          "key": "welcome.intro.tip",
           "image": "/images/emoji/twitter/ballot_box_with_check.png",
           "type": "text-only"
         }

@@ -5,7 +5,7 @@ import DiscourseURL from 'discourse/lib/url';
 import { iconNode } from 'discourse-common/lib/icon-library';
 import { cookAsync } from 'discourse/lib/text';
 import { ajax } from 'discourse/lib/ajax';
-import { buildTitle, clearUnreadList } from 'discourse/plugins/civically-layout/discourse/lib/utilities';
+import { buildTitle, clearUnreadList } from 'discourse/plugins/civically-navigation/discourse/lib/utilities';
 import { h } from 'virtual-dom';
 
 createWidget('checklist-item', {
@@ -160,7 +160,9 @@ export default createAppWidget('civically-user', {
     return h('ul', list);
   },
 
-  content(attrs, state) {
+  contents() {
+    const state = this.state;
+
     let contents = [
       h('div.widget-multi-title', [
         buildTitle(this, 'user', 'checklist'),

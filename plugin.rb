@@ -1,4 +1,5 @@
 # name: civically-user
+# app: system
 # about: User edits for Civically
 # version: 0.1
 # authors: Angus McLeod
@@ -62,10 +63,10 @@ after_initialize do
 
   DiscourseEvent.on(:user_created) do |user|
     CivicallyUser::User.create_checklist(user)
-    CivicallyApp::App.add(user, 'civically-user', enabled: true, side: 'right', order: 1)
-    CivicallyApp::App.add(user, 'civically-site', enabled: false, side: 'right', order: 2)
-    CivicallyApp::App.add(user, 'civically-navigation', enabled: false, side: 'left', order: 1)
-    CivicallyApp::App.add(user, 'civically-place', enabled: false, side: 'left', order: 2)
+    CivicallyApp::App.add(user, 'civically-user', enabled: true, position: 'right', order: 1)
+    CivicallyApp::App.add(user, 'civically-site', enabled: false, position: 'right', order: 2)
+    CivicallyApp::App.add(user, 'civically-navigation', enabled: false, position: 'left', order: 1)
+    CivicallyApp::App.add(user, 'civically-place', enabled: false, position: 'left', order: 2)
   end
 
   require_dependency 'application_controller'

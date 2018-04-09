@@ -41,7 +41,7 @@ en:
     intro:
       title: "Welcome to Civically!"
       description: This short introduction will take less than a minute.
-      guide:
+      tip:
         description: "As you go, tick what you want to know more about."
     people:
       title: "Where people help people."
