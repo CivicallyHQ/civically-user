@@ -1,3 +1,4 @@
+platform: 21 ## To fix
 question: 26 ## https://civically.io/t/asking-a-question/26
 rating: 27 ## https://civically.io/t/rating-a-service-or-place/27
 gov_apps: 16 ## https://civically.io/t/apps-and-app-store/16

@@ -21,6 +21,36 @@
       ]
     },
     {
+      "id": "platform",
+      "key": "welcome.platform",
+      "fields": [
+        {
+          "id": "what",
+          "key": "welcome.platform.what",
+          "image": "/images/emoji/twitter/houses.png",
+          "type": "checkbox"
+        },
+        {
+          "id": "why",
+          "key": "welcome.platform.why",
+          "image": "/images/emoji/twitter/woman_shrugging/2.png",
+          "type": "checkbox"
+        },
+        {
+          "id": "how",
+          "key": "welcome.platform.how",
+          "image": "/images/emoji/twitter/earth_africa.png",
+          "type": "checkbox"
+        },
+        {
+          "id": "tip",
+          "key": "welcome.platform.tip",
+          "image": "/images/emoji/twitter/adult/4.png",
+          "type": "text-only"
+        }
+      ]
+    },
+    {
       "id": "people",
       "key": "welcome.people",
       "fields": [
@@ -31,9 +61,27 @@
           "type": "checkbox"
         },
         {
-          "id": "help",
-          "key": "welcome.people.help",
-          "image": "/images/emoji/twitter/woman_mechanic/2.png",
+          "id": "discussion",
+          "key": "welcome.people.discussion",
+          "image": "/images/emoji/twitter/speech_balloon.png",
+          "type": "checkbox"
+        },
+        {
+          "id": "group",
+          "key": "welcome.people.group",
+          "image": "/images/emoji/twitter/flags.png",
+          "type": "checkbox"
+        },
+        {
+          "id": "rating",
+          "key": "welcome.people.rating",
+          "image": "/images/emoji/twitter/star.png",
+          "type": "checkbox"
+        },
+        {
+          "id": "event",
+          "key": "welcome.people.event",
+          "image": "/images/emoji/twitter/calendar.png",
           "type": "checkbox"
         }
       ]
@@ -49,6 +97,12 @@
           "type": "checkbox"
         },
         {
+          "id": "organisations",
+          "key": "welcome.tech.organisations",
+          "image": "/images/emoji/twitter/classical_building.png",
+          "type": "checkbox"
+        },
+        {
           "id": "apps",
           "key": "welcome.tech.apps",
           "image": "/images/emoji/twitter/earth_africa.png",
@@ -60,6 +114,12 @@
       "id": "shared",
       "key": "welcome.shared",
       "fields": [
+        {
+          "id": "ownership",
+          "key": "welcome.shared.ownership",
+          "image": "/images/emoji/twitter/scroll.png",
+          "type": "checkbox"
+        },
         {
           "id": "contribute",
           "key": "welcome.shared.contribute",
@@ -76,15 +136,7 @@
     },
     {
       "id": "submit",
-      "key": "welcome.submit",
-      "fields": [
-        {
-          "id": "bookmarks",
-          "key": "welcome.submit.bookmarks",
-          "image": "/images/emoji/twitter/bookmark.png",
-          "type": "text-only"
-        }
-      ]
+      "key": "welcome.submit"
     }
   ]
 }

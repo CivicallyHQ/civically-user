@@ -109,7 +109,7 @@ createWidget('bookmark-item', {
 export default createAppWidget('civically-user', {
   defaultState() {
     return {
-      currentType: 'checklist',
+      currentListType: 'checklist',
       checklist: [],
       bookmarks: [],
       loading: true
@@ -173,16 +173,16 @@ export default createAppWidget('civically-user', {
     let listContents = [];
 
     if (state.loading) {
-      if (state.currentType === 'checklist') {
+      if (state.currentListType === 'checklist') {
         this.getChecklist();
       } else {
         this.getBookmarks();
       }
       listContents.push(h('div.spinner.small'));
     } else {
-      clearUnreadList(this, state.currentType);
+      clearUnreadList(this, state.currentListType);
 
-      if (state.currentType === 'checklist') {
+      if (state.currentListType === 'checklist') {
         listContents.push(this.buildChecklist());
       } else {
         listContents.push(this.buildBookmarks());
@@ -191,17 +191,17 @@ export default createAppWidget('civically-user', {
 
     let classes = 'widget-list';
 
-    if (state.currentType === 'checklist') {
+    if (state.currentListType === 'checklist') {
       classes += '.no-borders';
     }
 
     let widgetListContents = [listContents];
 
-    if (state.currentType === 'bookmarks') {
+    if (state.currentListType === 'bookmarks') {
       widgetListContents.push(h('div.widget-list-controls', this.attach('link', {
         className: 'p-link',
         href: `/bookmarks`,
-        label: 'app.civically_site.list.more'
+        label: 'more'
       })));
     }
 
@@ -212,7 +212,7 @@ export default createAppWidget('civically-user', {
 
   showList(type) {
     this.state.loading = true;
-    this.state.currentType = type;
+    this.state.currentListType = type;
     this.scheduleRerender();
   }
 });
