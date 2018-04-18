@@ -1,5 +1,8 @@
 en:
   js:
+    app:
+      civically_user:
+        title: "User"
     create_account:
       locale: "Language"
     invite:

@@ -161,7 +161,8 @@ export default createAppWidget('civically-user', {
   },
 
   contents() {
-    const state = this.state;
+    const loading = this.state.loading;
+    const currentListType = this.state.currentListType;
 
     let contents = [
       h('div.widget-multi-title', [
@@ -172,17 +173,17 @@ export default createAppWidget('civically-user', {
 
     let listContents = [];
 
-    if (state.loading) {
-      if (state.currentListType === 'checklist') {
+    if (loading) {
+      if (currentListType === 'checklist') {
         this.getChecklist();
       } else {
         this.getBookmarks();
       }
       listContents.push(h('div.spinner.small'));
     } else {
-      clearUnreadList(this, state.currentListType);
+      clearUnreadList(this, currentListType);
 
-      if (state.currentListType === 'checklist') {
+      if (currentListType === 'checklist') {
         listContents.push(this.buildChecklist());
       } else {
         listContents.push(this.buildBookmarks());
@@ -191,13 +192,13 @@ export default createAppWidget('civically-user', {
 
     let classes = 'widget-list';
 
-    if (state.currentListType === 'checklist') {
+    if (currentListType === 'checklist') {
       classes += '.no-borders';
     }
 
     let widgetListContents = [listContents];
 
-    if (state.currentListType === 'bookmarks') {
+    if (currentListType === 'bookmarks') {
       widgetListContents.push(h('div.widget-list-controls', this.attach('link', {
         className: 'p-link',
         href: `/bookmarks`,
