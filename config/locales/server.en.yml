@@ -88,3 +88,33 @@ en:
     submit:
       title: "Let's get started!"
       description: "Topics you ticked are bookmarked on the next page."
+
+  badges:
+    basic_user:
+      name: Resident
+      description: All essential community functions.
+      long_description: |
+        This badge is granted when you reach trust level 1.
+        Thanks for sticking around a little while and reading a few topics to learn what Civically is about.
+        Your new user restrictions have been lifted; you've been granted all essential community abilities, such as starting a discussion, personal messaging, flagging, wiki editing, and the ability to post multiple images and links.
+    member:
+      name: Citizen
+      description: Post ratings, petition for a group and more likes.
+      long_description: |
+        This badge is granted when you reach trust level 2.
+        Thanks for participating over a period of weeks to truly join our community.
+        You can now post ratings, start a petition to create a group, and have a few more likes per day.
+    regular:
+      name: Local
+      description: Post events, recategorize, rename, followed links, wiki and more likes.
+      long_description: |
+        This badge is granted when you reach trust level 3.
+        Thanks for being a regular part of Civically over a period of months.
+        You can now post events, recategorize and rename topics, take advantage of more powerful spam flags, and you'll also get lots more likes per day.
+    leader:
+      name: Leader
+      description: Edit, close, archive, split and merge and even more likes.
+      long_description: |
+        This badge is granted when you reach trust level 4.
+        You're a leader selected by the Civically staff, and you set a positive example for the rest of the community.
+        You have the ability to edit all posts, take common topic moderator actions such as close, unlist, archive, split, and merge, and you have many likes per day.

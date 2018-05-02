@@ -90,3 +90,22 @@
 #activate-account-form {
   margin: 0;
 }
+
+.invites-show {
+  background-color: $secondary;
+  padding: 20px;
+  border-radius: 4px;
+
+  .col-image {
+    width: 100px;
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  .col-form {
+    margin-left: 100px;
+  }
+}

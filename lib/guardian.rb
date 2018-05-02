@@ -1,3 +1,5 @@
+## TO DO: Move class_evals to an extension
+
 require_dependency 'guardian'
 Guardian.class_eval do
   def can_invite_to_forum?(groups = nil)
@@ -49,4 +51,25 @@ Guardian.class_eval do
   def can_change_trust_level?(user)
     user && is_admin?
   end
+end
+
+module GuardianPlaceExtension
+  def can_create_topic_on_category?(category)
+    return false unless super(category)
+    return true if is_staff?
+
+    ## is user's place
+    (category.is_place && (category.id === user.place_category_id ||
+
+    ## or user's country
+    CivicallyPlace::Place.is_home_country(category.id, user))) ||
+
+    ## or is a meta category
+    category.meta
+  end
+end
+
+require_dependency 'guardian'
+class ::Guardian
+  prepend GuardianPlaceExtension
 end
