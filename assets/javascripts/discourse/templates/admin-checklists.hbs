@@ -1,0 +1,99 @@
+<div class="admin-container checklists">
+  <div class="container">
+    <div class="target-select">
+      <h3>{{I18n 'admin.checklist.target.label'}}</h3>
+      <div class="control-group">
+        {{input type='checkbox' checked=targetPlace}}
+        {{I18n 'admin.checklist.target.place'}}
+        <div class="input">
+          {{place-select-box value=placeCategoryId
+                             width=300
+                             filterable=true
+                             isDisabled=targetUsers}}
+        </div>
+      </div>
+      <div class="control-group">
+        {{input type='checkbox' checked=targetUsers}}
+        {{I18n 'admin.checklist.target.users'}}
+        <div class="input">
+          {{user-selector usernames=usernames
+                          canReceiveUpdates=true
+                          disabled=targetPlace}}
+        </div>
+      </div>
+
+      <div class="actions">
+        {{d-button label='admin.checklist.update.title' action='updateItem' disabled=actionDisabled}}
+        {{d-button label='admin.checklist.add.title' action='addItem' disabled=actionDisabled}}
+        {{d-button label='admin.checklist.remove.title' action='removeItem' disabled=actionDisabled}}
+      </div>
+    </div>
+
+    {{#if hasType}}
+      <div class="add-or-update">
+        {{#unless showAdd}}
+          <div class="column">
+            <h3>{{I18n 'admin.checklist.item.title'}}</h3>
+            <label>{{i18n 'admin.checklist.item.id'}}</label>
+            {{combo-box content=itemIds value=id none='admin.checklist.item.select'}}
+          </div>
+        {{/unless}}
+        {{#unless showRemove}}
+          <div class="column">
+            <h3>
+              {{#if showUpdate}}
+                {{I18n 'admin.checklist.update.label'}}
+              {{else}}
+                {{I18n 'admin.checklist.add.label'}}
+              {{/if}}
+            </h3>
+            {{#if showAdd}}
+              <div class="control-group">
+                <label>{{i18n 'admin.checklist.index'}}</label>
+                {{input type='number' value=index}}
+              </div>
+              <div class="control-group">
+                <label>{{i18n 'admin.checklist.values.id'}}</label>
+                {{input value=id}}
+              </div>
+            {{/if}}
+            <div class="control-group">
+              <label>{{i18n 'admin.checklist.values.active'}}</label>
+              {{combo-box content=booleanOptions value=active class='input-small' none="admin.checklist.values.select"}}
+            </div>
+            <div class="control-group">
+              <label>{{i18n 'admin.checklist.values.checked'}}</label>
+              {{combo-box content=booleanOptions value=checked class='input-small' none="admin.checklist.values.select"}}
+            </div>
+            <div class="control-group">
+              <label>{{i18n 'admin.checklist.values.checkable'}}</label>
+              {{combo-box content=booleanOptions value=checkable class='input-small' none="admin.checklist.values.select"}}
+            </div>
+            <div class="control-group">
+              <label>{{i18n 'admin.checklist.values.title'}}</label>
+              {{input value=title}}
+            </div>
+            <div class="control-group">
+              <label>{{i18n 'admin.checklist.values.detail'}}</label>
+              {{input value=detail}}
+            </div>
+          </div>
+        {{/unless}}
+        {{conditional-loading-spinner condition=gettingItems size='small'}}
+      </div>
+    {{/if}}
+  </div>
+
+  {{#if showSave}}
+    <div class="controls">
+      {{#if hasSavedResult}}
+        <span class="save-result {{saveResult}}">
+          {{d-icon savedIcon}}
+          {{i18n saveResult}}
+        </span>
+      {{/if}}
+      {{conditional-loading-spinner condition=loading size="small"}}
+      {{d-button action="save" label=saveLabel disabled=saveDisabled}}
+    </div>
+  {{/if}}
+</div>

@@ -20,3 +20,36 @@ en:
       bookmarks:
         title: "Bookmarks"
         help: "Your Bookmarks"
+
+  admin_js:
+    admin:
+      checklist:
+        label: "Checklists"
+        target:
+          label: "Target"
+          users: "Users"
+          place: "Place"
+        index: "Index"
+        item:
+          title: "Item"
+          id: "Item id"
+          select: "Select an id"
+        add:
+          title: "Add Item"
+          label: "Item"
+          save: "Add Item"
+        update:
+          title: "Update Item"
+          label: "Updates"
+          save: "Update Item"
+        remove:
+          title: "Remove Item"
+          save: "Remove Item"
+        values:
+          select: "Select a value"
+          id: "Id"
+          active: "Active"
+          checked: "Checked"
+          checkable: "Checkable"
+          title: "Title"
+          detail: "Detail"

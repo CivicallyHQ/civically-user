@@ -14,15 +14,19 @@ createWidget('checklist-item', {
 
   buildClasses(attrs) {
     let classes = 'checklist-item';
+
     if (attrs.next) {
       classes += ' next';
     }
+
     if (!attrs.item.active) {
       classes += ' inactive';
     }
+
     if (attrs.item.checked) {
       classes += ' checked';
     }
+
     return classes;
   },
 
@@ -49,6 +53,7 @@ createWidget('checklist-item', {
 
     if (state && state.checkable) {
       className += ' checkable';
+
       contents.push(this.attach('button', {
         icon,
         className,

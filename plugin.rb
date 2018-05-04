@@ -58,7 +58,10 @@ after_initialize do
   load File.expand_path('../lib/guardian.rb', __FILE__)
   load File.expand_path('../lib/user.rb', __FILE__)
   load File.expand_path('../controllers/checklist.rb', __FILE__)
+  load File.expand_path('../controllers/admin_checklist.rb', __FILE__)
   load File.expand_path('../jobs/bulk_checklist_update.rb', __FILE__)
+  load File.expand_path('../jobs/bulk_checklist_add.rb', __FILE__)
+  load File.expand_path('../jobs/bulk_checklist_remove.rb', __FILE__)
   load File.expand_path('../jobs/bulk_unread_lists_update.rb', __FILE__)
 
   DiscourseEvent.on(:user_created) do |user|

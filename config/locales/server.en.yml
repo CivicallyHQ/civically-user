@@ -7,6 +7,8 @@ en:
       set_place:
         title: "Set your place"
         detail: "[Go to the place set page.](/place/set)"
+    update:
+      error: "Failed to update checklists."
 
   invite_forum_mailer:
     title: "Invite Forum Mailer"
