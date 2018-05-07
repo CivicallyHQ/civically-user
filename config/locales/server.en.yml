@@ -43,53 +43,28 @@ en:
     intro:
       title: "Welcome to Civically!"
       description: This short introduction will take less than a minute.
-      tip:
-        description: "As you go, tick what you want to know more about."
     platform:
-      title: "A platform for civic society."
-      description: Civically is an open platform for civic society in your town, city, state and country.
-      what:
-        description: "What is civic society?"
-      why:
-        description: "Why does civic society need a platform?"
-      how:
-        description: "How does it work for any town, city, state or country?"
+      title: "A place for civic stuff."
+      description: Civically is a place for civic stuff in your town, state or country.
       tip:
-        description: "*Basically, 'civic society' means government, law and community.*"
+        description: "*Civic means government, law and community.*"
     people:
       title: "Where people help people."
-      description: "Civically is where you get help with **Government**, **Legal** and **Community** issues."
-      question:
-        description: "How to ask a question."
-      discussion:
-        description: "How to start a discussion."
-      group:
-        description: "How to join a group."
-      rating:
-        description: "How to rate a service."
-      event:
-        description: "How to post an event."
+      description: "Civically is where you can get help with any government, legal or community issue."
+      tip:
+        description: "*You can also join groups, find events, and much more.*"
     tech:
-      title: "With healthy and helpful technology."
-      description: "Civically uses powerful technology to create a healthy and helpful online space."
-      discussion:
-        description: "How we keep discussions healthy."
-      organisations:
-        description: "How community organisations and governments can use Civically."
-      apps:
-        description: "Our plans for world's first civic app store."
+      title: "In a healthy and helpful place."
+      description: "Civically is a healthy and helpful place. No ads or trolls allowed."
+      tip:
+        description: "We use powerful algorithims to fight off the trolls."
     shared:
       title: "Built with you, not for you."
       description: "Civically is open source, not-for-profit and user-run."
-      ownership:
-        description: "Who owns Civically."
-      contribute:
-        description: "How to contribute ideas, code or time."
-      compensate:
-        description: "How we plan to share profits with contributors."
+      tip:
+        description: "User-run means you, yes you, can help run Civically!"
     submit:
       title: "Let's get started!"
-      description: "Topics you ticked are bookmarked on the next page."
 
   badges:
     basic_user:
