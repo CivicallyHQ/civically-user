@@ -168,6 +168,7 @@ export default createAppWidget('civically-user', {
   contents() {
     const loading = this.state.loading;
     const currentListType = this.state.currentListType;
+    const user = this.currentUser;
 
     let contents = [
       h('div.widget-multi-title', [
@@ -206,7 +207,7 @@ export default createAppWidget('civically-user', {
     if (currentListType === 'bookmarks') {
       widgetListContents.push(h('div.widget-list-controls', this.attach('link', {
         className: 'p-link',
-        href: `/bookmarks`,
+        href: `/u/${user.username}/activity/bookmarks`,
         label: 'more'
       })));
     }
