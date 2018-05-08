@@ -63,21 +63,6 @@ export default {
             },
           });
         }
-
-        api.modifyClass(`route:user`, {
-          renderTemplate() {
-            this.render('people-wrapper');
-          },
-
-          setupController(controller, model) {
-            this._super(controller, model);
-            controller.set('mainContent', this.routeName);
-
-            Ember.run.scheduleOnce('afterRender', () => {
-              $('.people-image').insertAfter('.user-table');
-            })
-          }
-        });
       });
 
     // overriding method to pass title to translations when inviting new users from a topic.
