@@ -7,6 +7,9 @@ en:
       set_place:
         title: "Set your place"
         detail: "[Go to the place set page.](/place/set)"
+      post:
+        title: "Make a post"
+        detail: "Ask question, start a discussion, or post a reply in your place."
     update:
       error: "Failed to update checklists."
 

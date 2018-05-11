@@ -11,6 +11,12 @@
       "checked": false,
       "checkable": false,
       "active": true
-    }
+    },
+    {
+      "id": "post",
+      "checked": false,
+      "checkable": false,
+      "active": true
+    },
   ]
 }
