@@ -13,18 +13,6 @@
       "key": "welcome.intro"
     },
     {
-      "id": "platform",
-      "key": "welcome.platform",
-      "fields": [
-        {
-          "id": "tip",
-          "key": "welcome.platform.tip",
-          "image": "/images/emoji/twitter/houses.png",
-          "type": "text-only"
-        }
-      ]
-    },
-    {
       "id": "people",
       "key": "welcome.people",
       "fields": [

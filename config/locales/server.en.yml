@@ -45,12 +45,7 @@ en:
     title: "Welcome to Civically!"
     intro:
       title: "Welcome to Civically!"
-      description: This short introduction will take less than a minute.
-    platform:
-      title: "A place for civic stuff."
-      description: Civically is a place for civic stuff in your town, state or country.
-      tip:
-        description: "*Civic means government, law and community.*"
+      description: This is a really short introduction.
     people:
       title: "Where people help people."
       description: "Civically is where you can get help with any government, legal or community issue."

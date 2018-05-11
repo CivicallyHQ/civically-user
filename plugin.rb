@@ -18,28 +18,6 @@ DiscourseEvent.on(:custom_wizard_ready) do
       user = builder.wizard.user
       previous_steps = builder.submissions.last || {}
       final_step = builder.updater.fields.to_h
-      data = previous_steps.merge(final_step)
-
-      if data.present?
-        welcome_bookmark_ids = YAML.safe_load(File.read(File.join(
-          Rails.root, 'plugins', 'civically-user', 'config', 'welcome_bookmark_ids.yml'
-        )))
-        bookmarks = []
-        data.each do |k, v|
-          if v === 'true'
-            topic_id = welcome_bookmark_ids[k]
-
-            if topic = Topic.find_by(id: topic_id)
-              post = topic.ordered_posts.first
-
-              unless PostAction.exists?(post_id: post.id, user_id: user.id, post_action_type_id: PostActionType.types[:bookmark])
-                PostAction.act(user, post, PostActionType.types[:bookmark])
-                CivicallyUser::User.add_unread_list(user, 'bookmarks')
-              end
-            end
-          end
-        end
-      end
 
       CivicallyChecklist::Checklist.update_item(user, 'complete_welcome', checked: true)
     end
