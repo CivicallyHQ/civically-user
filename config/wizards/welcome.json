@@ -47,10 +47,6 @@
           "type": "text-only"
         }
       ]
-    },
-    {
-      "id": "submit",
-      "key": "welcome.submit"
     }
   ]
 }

@@ -55,14 +55,12 @@ en:
       title: "In a healthy and helpful place."
       description: "Civically is a healthy and helpful place. No ads or trolls allowed."
       tip:
-        description: "We use powerful algorithims to fight off the trolls."
+        description: "*We use powerful magic to fight off the trolls.*"
     shared:
       title: "Built with you, not for you."
       description: "Civically is open source, not-for-profit and user-run."
       tip:
-        description: "User-run means you, yes you, can help run Civically!"
-    submit:
-      title: "Let's get started!"
+        description: "*User-run means you, yes you, can help run Civically!*"
 
   badges:
     basic_user:
