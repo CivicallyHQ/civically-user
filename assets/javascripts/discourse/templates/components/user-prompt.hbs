@@ -1,0 +1,13 @@
+{{#if action}}
+  <a class='p-link' {{action action}}>
+    {{text}}
+  </a>
+{{else}}
+  {{#if linkTo}}
+    {{#link-to linkTo class='p-link'}}
+      {{text}}
+    {{/link-to}}
+  {{else}}
+    {{text}}
+  {{/if}}
+{{/if}}
