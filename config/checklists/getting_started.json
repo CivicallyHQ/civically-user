@@ -1,21 +1,28 @@
 {
+  "name": "getting_started",
   "items": [
     {
       "id": "complete_welcome",
       "checked": false,
       "checkable": false,
+      "hidden": false,
+      "hideable": false,
       "active": true
     },
     {
-      "id": "set_place",
+      "id": "set_town",
       "checked": false,
       "checkable": false,
+      "hidden": false,
+      "hideable": false,
       "active": true
     },
     {
       "id": "post",
       "checked": false,
       "checkable": false,
+      "hidden": false,
+      "hideable": false,
       "active": true
     }
   ]

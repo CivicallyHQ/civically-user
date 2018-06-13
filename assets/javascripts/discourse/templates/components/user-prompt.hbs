@@ -1,13 +1,10 @@
-{{#if action}}
-  <a class='p-link' {{action action}}>
+{{#if hasImage}}
+  <span class='image'>{{image}}</span>
+{{/if}}
+{{#if linkTo}}
+  {{#link-to linkTo class='p-link'}}
     {{text}}
-  </a>
+  {{/link-to}}
 {{else}}
-  {{#if linkTo}}
-    {{#link-to linkTo class='p-link'}}
-      {{text}}
-    {{/link-to}}
-  {{else}}
-    {{text}}
-  {{/if}}
+  <span>{{text}}</span>
 {{/if}}

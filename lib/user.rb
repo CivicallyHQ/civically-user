@@ -24,17 +24,6 @@ Discourse::Application.routes.append do
 end
 
 class CivicallyUser::User
-  def self.create_checklist(user)
-    list = ::JSON.parse(File.read(File.join(
-      Rails.root, 'plugins', 'civically-user', 'config', 'checklists', 'getting_started.json'
-    )))
-    list['items'].each do |item|
-      item['title'] = I18n.t("checklist.getting_started.#{item['id']}.title")
-      item['detail'] = I18n.t("checklist.getting_started.#{item['id']}.detail")
-    end
-    CivicallyChecklist::Checklist.set_list(user, list['items'])
-  end
-
   def self.add_unread_list(user, list)
     unread_lists = user.unread_lists
     user.custom_fields['unread_lists'] = unread_lists.push(list) if unread_lists.exclude?(list)

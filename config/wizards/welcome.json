@@ -1,11 +1,9 @@
 {
   "id": "welcome",
   "name": "Welcome",
-  "background": "url('/plugins/civically-user/images/background.png') center / cover #FEFDF9 no-repeat",
   "save_submissions": true,
   "multiple_submissions": true,
   "after_signup": true,
-  "prompt_completion": true,
   "theme":"Civically Wizards",
   "steps": [
     {

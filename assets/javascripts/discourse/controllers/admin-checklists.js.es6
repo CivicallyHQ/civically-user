@@ -62,17 +62,17 @@ export default Ember.Controller.extend({
     });
   },
 
-  @computed('id', 'active', 'checkable', 'checked', 'title', 'detail')
-  updateValid(id, active, checkable, checked, title, detail) {
+  @computed('id', 'active', 'checkable', 'checked', 'hideable', 'hidden', 'title', 'detail')
+  updateValid(id, active, checkable, checked, hideable, hidden, title, detail) {
     return id &&
-           (_.intersection([active, checkable, checked], [true, false]).length ||
+           (_.intersection([active, checkable, checked, hideable, hidden], [true, false]).length ||
            (title || detail));
   },
 
-  @computed('id', 'active', 'checkable', 'checked', 'title', 'detail')
-  addValid(id, active, checkable, checked, title, detail) {
+  @computed('id', 'active', 'checkable', 'checked', 'hideable', 'hidden', 'title', 'detail')
+  addValid(id, active, checkable, checked, hideable, hidden, title, detail) {
     return id &&
-           [active, checkable, checked].indexOf(undefined) === -1 &&
+           [active, checkable, checked, hideable, hidden].indexOf(undefined) === -1 &&
            title &&
            detail;
   },
@@ -110,12 +110,16 @@ export default Ember.Controller.extend({
     const active = this.get('active');
     const checkable = this.get('checkable');
     const checked = this.get('checked');
+    const hideable = this.get('hideable');
+    const hidden = this.get('hidden');
     const title = this.get('title');
     const detail = this.get('detail');
 
     if (active !== undefined && active !== null) item['active'] = active;
     if (checkable !== undefined && checkable !== null) item['checkable'] = checkable;
     if (checked !== undefined && checked !== null) item['checked'] = checked;
+    if (hideable !== undefined && hideable !== null) item['hideable'] = hideable;
+    if (hidden !== undefined && hidden !== null) item['hidden'] = hidden;
     if (title) item['title'] = title;
     if (detail) item['detail'] = detail;
 

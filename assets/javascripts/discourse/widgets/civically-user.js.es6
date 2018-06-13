@@ -5,7 +5,11 @@ import DiscourseURL from 'discourse/lib/url';
 import { iconNode } from 'discourse-common/lib/icon-library';
 import { cookAsync } from 'discourse/lib/text';
 import { ajax } from 'discourse/lib/ajax';
-import { buildTitle, clearUnreadList } from 'discourse/plugins/civically-navigation/discourse/lib/utilities';
+import popupAjaxError from 'discourse/lib/ajax-error';
+import {
+  buildTitle,
+  clearUnreadList
+} from 'discourse/plugins/civically-navigation/discourse/lib/utilities';
 import { h } from 'virtual-dom';
 
 createWidget('checklist-item', {
@@ -19,12 +23,16 @@ createWidget('checklist-item', {
       classes += ' next';
     }
 
-    if (!attrs.item.active) {
+    if (!this.state.active) {
       classes += ' inactive';
     }
 
-    if (attrs.item.checked) {
+    if (this.state.checked) {
       classes += ' checked';
+    }
+
+    if (this.state.hidden) {
+      classes += ' hidden';
     }
 
     return classes;
@@ -36,34 +44,41 @@ createWidget('checklist-item', {
       checked: attrs.item.checked,
       checkable: attrs.item.checkable,
       active: attrs.item.active,
+      hidden: attrs.item.hidden,
+      hideable: attrs.item.hideable,
       cookedDetail: null
     };
   },
 
   html(attrs, state) {
-    const icon = state && state.checked ? 'check' : 'arrow-right';
-    let className = 'check-toggle';
-    let contents = [];
+    const item = attrs.item;
 
     if (state.cookedDetail === null) {
-      cookAsync(attrs.item.detail).then((cooked) => {
+      cookAsync(item.detail).then((cooked) => {
         state.cookedDetail = cooked;
       });
     }
 
-    if (state && state.checkable) {
-      className += ' checkable';
+    let contents = [];
+
+    let checkIcon = state && state.checked ? 'check' : 'arrow-right';
+    let checkClass = 'check-toggle';
+
+    if (state.togglingCheck) {
+      contents.push(h('div.check-toggle.spinner.tiny'));
+    } else if (state && state.checkable) {
+      checkClass += ' checkable';
 
       contents.push(this.attach('button', {
-        icon,
-        className,
+        icon: checkIcon,
+        className: checkClass,
         action: 'toggleCheck',
       }));
     } else {
-      contents.push(h('div.check-toggle', iconNode(icon, { className })));
+      contents.push(h('div.check-toggle', iconNode(checkIcon, { className: checkClass })));
     }
 
-    let rightContents = [
+    let itemBody = [
       this.attach('button', {
         className: 'check-title',
         contents: h('span', attrs.item.title),
@@ -72,12 +87,24 @@ createWidget('checklist-item', {
     ];
 
     if (state && state.showDetail) {
-      rightContents.push(h('div.check-detail',
+      itemBody.push(h('div.check-detail',
         new RawHtml({ html: `${state.cookedDetail}` })
       ));
     }
 
-    contents.push(h('div.right-contents', rightContents));
+    contents.push(h('div.item-body', itemBody));
+
+    if (state.hideable) {
+      if (state.togglingHidden) {
+        contents.push(h('div.hidden-toggle.spinner.tiny'));
+      } else {
+        contents.push(this.attach('button', {
+          icon: 'eye-slash',
+          className: 'hidden-toggle',
+          action: 'toggleHidden',
+        }));
+      }
+    }
 
     return contents;
   },
@@ -86,6 +113,42 @@ createWidget('checklist-item', {
     if (!this.attrs.item.active) return;
     this.state.showDetail = !this.state.showDetail;
     this.scheduleRerender();
+  },
+
+  toggleCheck() {
+    this.state.togglingCheck = true;
+    this.updateItem({
+      checked: !this.state.checked
+    }).then(() => {
+      this.state.togglingCheck = false;
+      this.scheduleRerender();
+    })
+  },
+
+  toggleHidden() {
+    this.state.togglingHidden = true;
+    this.updateItem({
+      hidden: !this.state.hidden
+    }).then(() => {
+      this.state.togglingHidden = false;
+      this.scheduleRerender();
+    })
+  },
+
+  updateItem(updates) {
+    const username = this.currentUser.username;
+    const itemId = this.attrs.item.id;
+
+    return ajax(`/checklist/${username}/${itemId}/update`, {
+      type: 'PUT',
+      data: { updates }
+    }).then((result) => {
+      if (result.success) {
+        Object.keys(result.updates).forEach((k) => {
+          this.state[k] = result.updates[k];
+        });
+      }
+    }).catch(popupAjaxError);
   }
 });
 
@@ -212,6 +275,41 @@ export default createAppWidget('civically-user', {
       })));
     }
 
+    if (user.checklist.can_add) {
+      if (currentListType === 'checklist') {
+        if (this.state.savingItem) {
+          widgetListContents.push(h('div.spinner.tiny'));
+        } else if (this.state.addItem) {
+          widgetListContents.push(h('div.add-item', [
+            h('div.inputs', [
+              h('input.title', {
+                placeholder: I18n.t('user.checklist.item.title')
+              }),
+              h('textarea.detail', {
+                placeholder: I18n.t('user.checklist.item.detail')
+              })
+            ]),
+            this.attach('button', {
+              icon: 'check',
+              action: 'saveItem',
+              className: 'save-item btn-primary btn-small'
+            }),
+            this.attach('button', {
+              icon: 'times',
+              action: 'closeAdd',
+              className: 'close-add btn-small'
+            })
+          ]))
+        } else {
+          widgetListContents.push(h('div.widget-list-controls', this.attach('link', {
+            className: 'p-link',
+            label: 'user.checklist.add',
+            action: 'addItem'
+          })));
+        }
+      }
+    }
+
     contents.push(h(`div.${classes}`, widgetListContents));
 
     return contents;
@@ -220,6 +318,45 @@ export default createAppWidget('civically-user', {
   showList(type) {
     this.state.loading = true;
     this.state.currentListType = type;
+    this.scheduleRerender();
+  },
+
+  addItem() {
+    this.state.addItem = true;
+    this.scheduleRerender();
+  },
+
+  closeAdd() {
+    this.state.addItem = false;
+    this.scheduleRerender();
+  },
+
+  saveItem() {
+    const username = this.currentUser.username;
+    this.state.addItem = false;
+    this.state.savingItem = true;
+
+    let item = {
+      title: $('.civically-user .add-item input.title').val(),
+      detail: $('.civically-user .add-item textarea.detail').val()
+    }
+
+    ajax(`/checklist/${username}/add`, {
+      type: 'PUT',
+      data: {
+        item
+      }
+    }).then((result) => {
+      if (result.success) {
+        let existing = this.state.checklist;
+        existing.push(result.item);
+        this.state.checklist = existing;
+      }
+    }).catch(popupAjaxError).finally(() => {
+      this.state.savingItem = false;
+      this.scheduleRerender();
+    });
+
     this.scheduleRerender();
   }
 });

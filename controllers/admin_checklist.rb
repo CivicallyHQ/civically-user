@@ -72,7 +72,7 @@ class CivicallyChecklist::AdminChecklistController < ::ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:id, :active, :checked, :checkable, :title, :detail)
+    params.require(:item).permit(:id, :active, :checked, :checkable, :hidden, :hideable, :title, :detail)
   end
 
   def remove_params

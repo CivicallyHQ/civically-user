@@ -4,12 +4,12 @@ en:
       complete_welcome:
         title: "Complete the Welcome Wizard"
         detail: "[Go back to the Welcome Wizard.](/w/welcome)"
-      set_place:
-        title: "Set your place"
+      set_town:
+        title: "Set your town"
         detail: "[Go to the place set page.](/place/set)"
       post:
         title: "Make a post"
-        detail: "Ask question, start a discussion, or post a reply in your place."
+        detail: "Ask question, start a discussion, or post a reply."
     update:
       error: "Failed to update checklists."
 
@@ -72,18 +72,18 @@ en:
         Your new user restrictions have been lifted; you've been granted all essential community abilities, such as starting a discussion, personal messaging, flagging, wiki editing, and the ability to post multiple images and links.
     member:
       name: Citizen
-      description: Post ratings, petition for a group and more likes.
+      description: Post events, post ratings, petition for a group and more likes.
       long_description: |
         This badge is granted when you reach trust level 2.
         Thanks for participating over a period of weeks to truly join our community.
-        You can now post ratings, start a petition to create a group, and have a few more likes per day.
+        You can now post events and ratings, start a petition to create a group, and have a few more likes per day.
     regular:
-      name: Local
-      description: Post events, recategorize, rename, followed links, wiki and more likes.
+      name: Regular
+      description: Recategorize, rename, followed links, wiki and more likes.
       long_description: |
         This badge is granted when you reach trust level 3.
         Thanks for being a regular part of Civically over a period of months.
-        You can now post events, recategorize and rename topics, take advantage of more powerful spam flags, and you'll also get lots more likes per day.
+        You can now recategorize and rename topics, take advantage of more powerful spam flags, and you'll also get lots more likes per day.
     leader:
       name: Leader
       description: Edit, close, archive, split and merge and even more likes.

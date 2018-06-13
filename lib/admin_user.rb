@@ -53,7 +53,7 @@ end
 require_dependency 'admin_user_index_query'
 class ::AdminUserIndexQuery
   prepend AdminFindUsersQueryExtension
-  SORTABLE_MAPPING['place_category_id'] = "(SELECT value FROM user_custom_fields WHERE user_id = users.id AND name = 'place_category_id' LIMIT 1)"
+  SORTABLE_MAPPING['town_category_id'] = "(SELECT value FROM user_custom_fields WHERE user_id = users.id AND name = 'town_category_id' LIMIT 1)"
 end
 
 Admin::UsersController.class_eval do

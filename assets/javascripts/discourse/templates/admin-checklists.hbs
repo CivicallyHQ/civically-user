@@ -70,6 +70,14 @@
               {{combo-box content=booleanOptions value=checkable class='input-small' none="admin.checklist.values.select"}}
             </div>
             <div class="control-group">
+              <label>{{i18n 'admin.checklist.values.hideable'}}</label>
+              {{combo-box content=booleanOptions value=hideable class='input-small' none="admin.checklist.values.select"}}
+            </div>
+            <div class="control-group">
+              <label>{{i18n 'admin.checklist.values.hidden'}}</label>
+              {{combo-box content=booleanOptions value=hidden class='input-small' none="admin.checklist.values.select"}}
+            </div>
+            <div class="control-group">
               <label>{{i18n 'admin.checklist.values.title'}}</label>
               {{input value=title}}
             </div>

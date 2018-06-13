@@ -14,7 +14,12 @@
         color: $primary;
       }
 
-      .checkable {
+      &.checkable {
+        cursor: pointer;
+      }
+
+      &.hidden-toggle {
+        align-self: flex-start;
         cursor: pointer;
       }
 
@@ -25,6 +30,7 @@
 
     .checklist-item {
       display: flex;
+      align-items: center;
       margin: 5px 0;
 
       &.next {
@@ -46,9 +52,17 @@
       }
 
       &.checked {
-        button:hover {
+        .item-body button:hover {
           background: $success-low;
         }
+      }
+
+      &:hover .hidden-toggle {
+        visibility: visible;
+      }
+
+      &.hidden {
+        display: none;
       }
     }
 
@@ -65,7 +79,7 @@
       }
     }
 
-    .right-contents {
+    .item-body {
       flex: 1;
 
       .check-title, .check-detail {
@@ -84,6 +98,21 @@
         }
       }
     }
+
+    .hidden-toggle {
+      visibility: hidden;
+    }
+  }
+
+  .app-widget-container .spinner {
+    margin: 0;
+
+    &.tiny {
+      width: 5px;
+      height: 5px;
+      padding: 2px;
+      margin: 3px 5px;
+    }
   }
 }
 
@@ -95,6 +124,7 @@
   background-color: $secondary;
   padding: 20px;
   border-radius: 4px;
+  position: relative;
 
   .col-image {
     width: 100px;
@@ -105,8 +135,10 @@
     }
   }
 
-  .col-form {
-    margin-left: 100px;
+  .people-image {
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
   }
 }
 
@@ -169,4 +201,18 @@
   padding: 10px;
   border-radius: 4px;
   margin-top: 10px;
+  display: flex;
+  text-align: left;
+  align-items: center;
+
+  .image {
+    min-width: 20px;
+    margin-right: 10px;
+    text-align: center;
+  }
+
+  i.fa {
+    font-size: 1.2em;
+    margin: 0;
+  }
 }

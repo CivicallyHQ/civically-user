@@ -17,9 +17,32 @@ en:
       checklist:
         title: "Checklist"
         help: "Your Checklist"
+        add: "Add"
+        save: "Save"
+        item:
+          title: "Title"
+          detail: "Detail"
       bookmarks:
         title: "Bookmarks"
         help: "Your Bookmarks"
+      institution:
+        title: "Institution"
+        instructions: "government or organization (optional)"
+      invited:
+        create: "Send a Personal Invite"
+      position:
+        title: "Position"
+        instructions: "your title (optional)"
+
+    badges:
+      basic_user:
+        name: Resident
+      member:
+        name: Citizen
+      regular:
+        name: Regular
+      leader:
+        name: Leader
 
   admin_js:
     admin:
@@ -51,5 +74,7 @@ en:
           active: "Active"
           checked: "Checked"
           checkable: "Checkable"
+          hidden: "Hidden"
+          hideable: "Hideable"
           title: "Title"
           detail: "Detail"
