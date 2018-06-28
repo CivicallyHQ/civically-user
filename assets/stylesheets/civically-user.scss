@@ -68,6 +68,7 @@
     .check-toggle {
       padding: 4px 6px;
       line-height: 16px;
+      align-self: start;
 
       .fa-check {
         color: $success;
