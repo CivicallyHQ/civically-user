@@ -1,15 +1,11 @@
 import { createWidget } from 'discourse/widgets/widget';
-import { createAppWidget } from 'discourse/plugins/civically-app/discourse/widgets/app-widget';
 import RawHtml from 'discourse/widgets/raw-html';
 import DiscourseURL from 'discourse/lib/url';
 import { iconNode } from 'discourse-common/lib/icon-library';
 import { cookAsync } from 'discourse/lib/text';
 import { ajax } from 'discourse/lib/ajax';
 import popupAjaxError from 'discourse/lib/ajax-error';
-import {
-  buildTitle,
-  clearUnreadList
-} from 'discourse/plugins/civically-navigation/discourse/lib/utilities';
+
 import { h } from 'virtual-dom';
 
 createWidget('checklist-item', {
@@ -122,7 +118,7 @@ createWidget('checklist-item', {
     }).then(() => {
       this.state.togglingCheck = false;
       this.scheduleRerender();
-    })
+    });
   },
 
   toggleHidden() {
@@ -132,7 +128,7 @@ createWidget('checklist-item', {
     }).then(() => {
       this.state.togglingHidden = false;
       this.scheduleRerender();
-    })
+    });
   },
 
   updateItem(updates) {
@@ -174,189 +170,204 @@ createWidget('bookmark-item', {
   }
 });
 
-export default createAppWidget('civically-user', {
-  defaultState() {
-    return {
-      currentListType: 'checklist',
-      checklist: [],
-      bookmarks: [],
-      loading: true
-    };
-  },
+// User Widget
+const navigationUtilitiesPath = 'discourse/plugins/civically-navigation/discourse/lib/utilities';
+const appWidgetPath = 'discourse/plugins/civically-app/discourse/widgets/app-widget';
+let userWidget = {};
 
-  getChecklist() {
-    const username = this.currentUser.username;
-    ajax(`/checklist/${username}`).then((items) => {
-      this.state.checklist = items || [];
-      this.state.loading = false;
-      this.scheduleRerender();
-    });
-  },
+if (requirejs.entries[navigationUtilitiesPath] && requirejs.entries[appWidgetPath]) {
+  const buildTitle = requirejs(navigationUtilitiesPath).buildTitle;
+  const clearUnreadList = requirejs(navigationUtilitiesPath).clearUnreadList;
+  const createAppWidget = requirejs(appWidgetPath).createAppWidget;
 
-  getBookmarks() {
-    this.store.findFiltered('topicList', {
-      filter: 'bookmarks'
-    }).then((result) => {
-      this.state.bookmarks = result.topics.slice(0,5) || [];
-      this.state.loading = false;
-      this.scheduleRerender();
-    });
-  },
+  const userWidgetParams = {
+    defaultState() {
+      return {
+        currentListType: 'checklist',
+        checklist: [],
+        bookmarks: [],
+        loading: true
+      };
+    },
 
-  buildChecklist() {
-    let next = false;
-    return h('ul', this.state.checklist.map((item) => {
-      let itemAttrs = { item };
-      if (!item.checked && next === false) {
-        next = true;
-        itemAttrs['next'] = next;
-      }
-      return this.attach('checklist-item', itemAttrs);
-    }));
-  },
-
-  buildBookmarks() {
-    const bookmarks = this.state.bookmarks;
-    let list = [ h('div.no-items', I18n.t('app.civically_site.list.none')) ];
-
-    if (bookmarks.length > 0) {
-      list = bookmarks.map((topic) => {
-        return this.attach('bookmark-item', { topic });
+    getChecklist() {
+      const username = this.currentUser.username;
+      ajax(`/checklist/${username}`).then((items) => {
+        this.state.checklist = items || [];
+        this.state.loading = false;
+        this.scheduleRerender();
       });
-    }
+    },
 
-    return h('ul', list);
-  },
+    getBookmarks() {
+      this.store.findFiltered('topicList', {
+        filter: 'bookmarks'
+      }).then((result) => {
+        this.state.bookmarks = result.topics.slice(0,5) || [];
+        this.state.loading = false;
+        this.scheduleRerender();
+      });
+    },
 
-  contents() {
-    const loading = this.state.loading;
-    const currentListType = this.state.currentListType;
-    const user = this.currentUser;
+    buildChecklist() {
+      let next = false;
+      return h('ul', this.state.checklist.map((item) => {
+        let itemAttrs = { item };
+        if (!item.checked && next === false) {
+          next = true;
+          itemAttrs['next'] = next;
+        }
+        return this.attach('checklist-item', itemAttrs);
+      }));
+    },
 
-    let contents = [
-      h('div.widget-multi-title', [
-        buildTitle(this, 'user', 'checklist'),
-        buildTitle(this, 'user', 'bookmarks')
-      ])
-    ];
+    buildBookmarks() {
+      const bookmarks = this.state.bookmarks;
+      let list = [ h('div.no-items', I18n.t('app.civically_site.list.none')) ];
 
-    let listContents = [];
-
-    if (loading) {
-      if (currentListType === 'checklist') {
-        this.getChecklist();
-      } else {
-        this.getBookmarks();
+      if (bookmarks.length > 0) {
+        list = bookmarks.map((topic) => {
+          return this.attach('bookmark-item', { topic });
+        });
       }
-      listContents.push(h('div.spinner.small'));
-    } else {
-      clearUnreadList(this, currentListType);
 
-      if (currentListType === 'checklist') {
-        listContents.push(this.buildChecklist());
-      } else {
-        listContents.push(this.buildBookmarks());
-      }
-    }
+      return h('ul', list);
+    },
 
-    let classes = 'widget-list';
+    contents() {
+      const loading = this.state.loading;
+      const currentListType = this.state.currentListType;
+      const user = this.currentUser;
 
-    if (currentListType === 'checklist') {
-      classes += '.no-borders';
-    }
+      let contents = [
+        h('div.widget-multi-title', [
+          buildTitle(this, 'user', 'checklist'),
+          buildTitle(this, 'user', 'bookmarks')
+        ])
+      ];
 
-    let widgetListContents = [listContents];
+      let listContents = [];
 
-    if (currentListType === 'bookmarks') {
-      widgetListContents.push(h('div.widget-list-controls', this.attach('link', {
-        className: 'p-link',
-        href: `/u/${user.username}/activity/bookmarks`,
-        label: 'more'
-      })));
-    }
-
-    if (user.checklist.can_add) {
-      if (currentListType === 'checklist') {
-        if (this.state.savingItem) {
-          widgetListContents.push(h('div.spinner.tiny'));
-        } else if (this.state.addItem) {
-          widgetListContents.push(h('div.add-item', [
-            h('div.inputs', [
-              h('input.title', {
-                placeholder: I18n.t('user.checklist.item.title')
-              }),
-              h('textarea.detail', {
-                placeholder: I18n.t('user.checklist.item.detail')
-              })
-            ]),
-            this.attach('button', {
-              icon: 'check',
-              action: 'saveItem',
-              className: 'save-item btn-primary btn-small'
-            }),
-            this.attach('button', {
-              icon: 'times',
-              action: 'closeAdd',
-              className: 'close-add btn-small'
-            })
-          ]))
+      if (loading) {
+        if (currentListType === 'checklist') {
+          this.getChecklist();
         } else {
-          widgetListContents.push(h('div.widget-list-controls', this.attach('link', {
-            className: 'p-link',
-            label: 'user.checklist.add',
-            action: 'addItem'
-          })));
+          this.getBookmarks();
+        }
+        listContents.push(h('div.spinner.small'));
+      } else {
+        clearUnreadList(this, currentListType);
+
+        if (currentListType === 'checklist') {
+          listContents.push(this.buildChecklist());
+        } else {
+          listContents.push(this.buildBookmarks());
         }
       }
-    }
 
-    contents.push(h(`div.${classes}`, widgetListContents));
+      let classes = 'widget-list';
 
-    return contents;
-  },
-
-  showList(type) {
-    this.state.loading = true;
-    this.state.currentListType = type;
-    this.scheduleRerender();
-  },
-
-  addItem() {
-    this.state.addItem = true;
-    this.scheduleRerender();
-  },
-
-  closeAdd() {
-    this.state.addItem = false;
-    this.scheduleRerender();
-  },
-
-  saveItem() {
-    const username = this.currentUser.username;
-    this.state.addItem = false;
-    this.state.savingItem = true;
-
-    let item = {
-      title: $('.civically-user .add-item input.title').val(),
-      detail: $('.civically-user .add-item textarea.detail').val()
-    }
-
-    ajax(`/checklist/${username}/add`, {
-      type: 'PUT',
-      data: {
-        item
+      if (currentListType === 'checklist') {
+        classes += '.no-borders';
       }
-    }).then((result) => {
-      if (result.success) {
-        let existing = this.state.checklist;
-        existing.push(result.item);
-        this.state.checklist = existing;
+
+      let widgetListContents = [listContents];
+
+      if (currentListType === 'bookmarks') {
+        widgetListContents.push(h('div.widget-list-controls', this.attach('link', {
+          className: 'p-link',
+          href: `/u/${user.username}/activity/bookmarks`,
+          label: 'more'
+        })));
       }
-    }).catch(popupAjaxError).finally(() => {
-      this.state.savingItem = false;
+
+      if (user.checklist.can_add) {
+        if (currentListType === 'checklist') {
+          if (this.state.savingItem) {
+            widgetListContents.push(h('div.spinner.tiny'));
+          } else if (this.state.addItem) {
+            widgetListContents.push(h('div.add-item', [
+              h('div.inputs', [
+                h('input.title', {
+                  placeholder: I18n.t('user.checklist.item.title')
+                }),
+                h('textarea.detail', {
+                  placeholder: I18n.t('user.checklist.item.detail')
+                })
+              ]),
+              this.attach('button', {
+                icon: 'check',
+                action: 'saveItem',
+                className: 'save-item btn-primary btn-small'
+              }),
+              this.attach('button', {
+                icon: 'times',
+                action: 'closeAdd',
+                className: 'close-add btn-small'
+              })
+            ]));
+          } else {
+            widgetListContents.push(h('div.widget-list-controls', this.attach('link', {
+              className: 'p-link',
+              label: 'user.checklist.add',
+              action: 'addItem'
+            })));
+          }
+        }
+      }
+
+      contents.push(h(`div.${classes}`, widgetListContents));
+
+      return contents;
+    },
+
+    showList(type) {
+      this.state.loading = true;
+      this.state.currentListType = type;
       this.scheduleRerender();
-    });
+    },
 
-    this.scheduleRerender();
-  }
-});
+    addItem() {
+      this.state.addItem = true;
+      this.scheduleRerender();
+    },
+
+    closeAdd() {
+      this.state.addItem = false;
+      this.scheduleRerender();
+    },
+
+    saveItem() {
+      const username = this.currentUser.username;
+      this.state.addItem = false;
+      this.state.savingItem = true;
+
+      let item = {
+        title: $('.civically-user .add-item input.title').val(),
+        detail: $('.civically-user .add-item textarea.detail').val()
+      };
+
+      ajax(`/checklist/${username}/add`, {
+        type: 'PUT',
+        data: {
+          item
+        }
+      }).then((result) => {
+        if (result.success) {
+          let existing = this.state.checklist;
+          existing.push(result.item);
+          this.state.checklist = existing;
+        }
+      }).catch(popupAjaxError).finally(() => {
+        this.state.savingItem = false;
+        this.scheduleRerender();
+      });
+
+      this.scheduleRerender();
+    }
+  };
+
+  userWidget = createAppWidget('civically-user', userWidgetParams);
+}
+
+export default userWidget;
