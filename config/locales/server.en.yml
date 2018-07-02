@@ -58,7 +58,7 @@ en:
         description: "*We use powerful magic to fight off the trolls.*"
     shared:
       title: "Built with you, not for you."
-      description: "Civically is open source, not-for-profit and user-run."
+      description: "Civically is open source, open planned and user-run."
       tip:
         description: "*User-run means you, yes you, can help run Civically!*"
 
