@@ -38,10 +38,13 @@ after_initialize do
   load File.expand_path('../jobs/bulk_checklist_remove.rb', __FILE__)
   load File.expand_path('../jobs/bulk_unread_lists_update.rb', __FILE__)
 
-  DiscoursePluginRegistry.serialized_current_user_fields << "institution"
   DiscoursePluginRegistry.serialized_current_user_fields << "position"
-  add_to_serializer(:current_user, :institution) { object.custom_fields["institution"] }
   add_to_serializer(:current_user, :position) { object.custom_fields["position"] }
+
+  public_user_custom_fields = SiteSetting.public_user_custom_fields.split('|')
+  public_user_custom_fields.push('position') unless public_user_custom_fields.include?('position')
+  SiteSetting.public_user_custom_fields = public_user_custom_fields.join('|')
+
   add_to_serializer(:current_user, :unread_lists) { object.unread_lists }
   add_to_serializer(:current_user, :checklist) { CivicallyChecklist::Serializer.new(object, root: false).as_json }
 

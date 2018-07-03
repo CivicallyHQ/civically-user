@@ -6,6 +6,14 @@ class ::User
       []
     end
   end
+
+  def position
+    if custom_fields['position']
+      custom_fields['position']
+    else
+      nil
+    end
+  end
 end
 
 module ::CivicallyUser

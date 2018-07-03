@@ -25,14 +25,11 @@ en:
       bookmarks:
         title: "Bookmarks"
         help: "Your Bookmarks"
-      institution:
-        title: "Institution"
-        instructions: "government or organization (optional)"
       invited:
         create: "Send a Personal Invite"
       position:
         title: "Position"
-        instructions: "your title (optional)"
+        instructions: "your job title (optional)"
 
     badges:
       basic_user:
