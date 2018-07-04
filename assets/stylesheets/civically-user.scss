@@ -216,3 +216,13 @@
     margin: 0;
   }
 }
+
+.user-table .admin-controls {
+  position: relative;
+
+  > .pull-right {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+  }
+}
