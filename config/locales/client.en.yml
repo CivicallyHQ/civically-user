@@ -3,16 +3,21 @@ en:
     app:
       civically_user:
         title: "User"
+
     create_account:
       locale: "Language"
+      disclaimer: >
+        By registering, you agree to the
+        <a href='/tos' class='p-link' target='_blank'>privacy policy</a>
+        and <a href='/privacy' class='p-link' target='_blank'>terms of service</a>.
+
     invite:
       custom_message_template_forum: "Hey, you should join Civically!"
-    topic:
-      invite_reply:
-        to_topic_blank: "Enter the username or email address of the person you'd like to invite to '{{topicTitle}}'."
-        to_topic_email: "You've entered an email address. We'll email an invitation that allows your friend to immediately reply to '{{topicTitle}}'."
-        to_topic_username: "You've entered a username. We'll send a notification with a link inviting them to '{{topicTitle}}'."
-        to_username: "Enter the username of the person you'd like to invite. We'll send a notification with a link inviting them to '{{topicTitle}}'."
+      disclaimer: >
+        By accepting this invitation, you agree to the
+        <a href='/tos' class='p-link' target='_blank'>privacy policy</a>
+        and <a href='/privacy' class='p-link' target='_blank'>terms of service</a>.
+
     user:
       checklist:
         title: "Checklist"
