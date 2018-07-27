@@ -35,6 +35,9 @@ en:
       position:
         title: "Position"
         instructions: "your job title (optional)"
+      linkedin:
+        title: "LinkedIn"
+        instructions: "url of your LinkedIn profile"
 
     badges:
       basic_user:

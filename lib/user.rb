@@ -14,6 +14,14 @@ class ::User
       nil
     end
   end
+
+  def linkedin
+    if custom_fields['linkedin']
+      custom_fields['linkedin']
+    else
+      nil
+    end
+  end
 end
 
 module ::CivicallyUser

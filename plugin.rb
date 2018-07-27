@@ -40,9 +40,12 @@ after_initialize do
 
   DiscoursePluginRegistry.serialized_current_user_fields << "position"
   add_to_serializer(:current_user, :position) { object.custom_fields["position"] }
+  DiscoursePluginRegistry.serialized_current_user_fields << "linkedin"
+  add_to_serializer(:current_user, :position) { object.custom_fields["linkedin"] }
 
   public_user_custom_fields = SiteSetting.public_user_custom_fields.split('|')
   public_user_custom_fields.push('position') unless public_user_custom_fields.include?('position')
+  public_user_custom_fields.push('linkedin') unless public_user_custom_fields.include?('linkedin')
   SiteSetting.public_user_custom_fields = public_user_custom_fields.join('|')
 
   add_to_serializer(:current_user, :unread_lists) { object.unread_lists }
