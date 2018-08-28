@@ -1,5 +1,3 @@
-import InviteController from 'discourse/controllers/invite';
-import { emailValid } from 'discourse/lib/utilities';
 import { default as computed, observes } from 'ember-addons/ember-computed-decorators';
 import { withPluginApi } from 'discourse/lib/plugin-api';
 
@@ -72,7 +70,16 @@ export default {
             privacy_link: "/privacy"
           });
         }
-      })
+      });
+
+      api.modifyClass('route:discourse', {
+        redirectIfLoginRequired() {
+          const app = this.controllerFor("application");
+          if (app.get("loginRequired")) {
+            return this.replaceWith("/start");
+          }
+        },
+      });
     });
   }
 };
