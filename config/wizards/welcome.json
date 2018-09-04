@@ -4,44 +4,57 @@
   "save_submissions": true,
   "multiple_submissions": true,
   "after_signup": true,
+  "required": true,
   "theme":"Civically Wizards",
   "steps": [
     {
       "id": "intro",
-      "key": "welcome.intro"
-    },
-    {
-      "id": "people",
-      "key": "welcome.people",
+      "key": "welcome.intro",
+      "banner": "/plugins/civically-private/images/angus.png",
       "fields": [
         {
           "id": "tip",
-          "key": "welcome.people.tip",
-          "image": "/images/emoji/twitter/flags.png",
+          "key": "welcome.intro.tip",
+          "image": "/images/emoji/twitter/adult/4.png",
           "type": "text-only"
         }
       ]
     },
     {
-      "id": "tech",
-      "key": "welcome.tech",
+      "id": "one",
+      "key": "welcome.one",
+      "banner": "/plugins/civically-private/images/post.png",
       "fields": [
         {
           "id": "tip",
-          "key": "welcome.tech.tip",
-          "image": "/images/emoji/twitter/japanese_ogre.png",
+          "key": "welcome.one.tip",
+          "image": "/images/emoji/twitter/adult/4.png",
           "type": "text-only"
         }
       ]
     },
     {
-      "id": "submit",
-      "key": "welcome.shared",
+      "id": "two",
+      "key": "welcome.two",
+      "banner": "/plugins/civically-private/images/see_say.png",
       "fields": [
         {
           "id": "tip",
-          "key": "welcome.shared.tip",
-          "image": "/images/emoji/twitter/raising_hand_woman/2.png",
+          "key": "welcome.two.tip",
+          "image": "/images/emoji/twitter/adult/4.png",
+          "type": "text-only"
+        }
+      ]
+    },
+    {
+      "id": "three",
+      "key": "welcome.three",
+      "banner": "/plugins/civically-private/images/ideas.png",
+      "fields": [
+        {
+          "id": "tip",
+          "key": "welcome.three.tip",
+          "image": "/images/emoji/twitter/adult/4.png",
           "type": "text-only"
         }
       ]

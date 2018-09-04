@@ -44,23 +44,25 @@ en:
   welcome:
     title: "Welcome to Civically!"
     intro:
-      title: "Welcome to Civically!"
-      description: This short introduction will take less than a minute.
-    people:
-      title: "Where people help people."
-      description: "Civically is where you can get help with a legal or government problem."
+      title: "Welcome to the Civically Test!"
+      description: Civically makes it easier to deal with law and government. We need your help to test it. Together, we can make the system work better for everybody.
       tip:
-        description: "*You can also join groups, find events, and much more.*"
-    tech:
-      title: "In a healthy and helpful place."
-      description: "Civically is carefully designed to be healthy and helpful. No ads or trolls allowed."
+        description: "I'm Angus, the creator of Civically. I'm really grateful for your help!"
+    one:
+      title: "Posting is the best way to help."
+      description: "Post about a legal problem you're having or had, reply to other people's posts and share any useful websites or materials you find."
       tip:
-        description: "*We use powerful tech wizardry to fight off the trolls.*"
-    shared:
-      title: "Built for the public benefit."
-      description: "Civically is open source, non-profit and community-minded."
+        description: "*If you're worried about posting for any reason, talk with me about it.*"
+    two:
+      title: "If you see something, say something."
+      description: "If you see a post that isn't appropriate, let us know. If you see something that doesn't work, let us know."
       tip:
-        description: "*We are run to benefit the community, not shareholders.*"
+        description: "*You can always email me at angus@civically.io.*"
+    three:
+      title: "We'd love to hear your ideas."
+      description: "If you have any ideas about how Civically could be better, tell us! We'd love to hear your thoughts."
+      tip:
+        description: "*Civically is non-profit. Your ideas are used to benefit the whole community.*"
 
   badges:
     basic_user:
