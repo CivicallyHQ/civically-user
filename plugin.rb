@@ -5,7 +5,8 @@
 # authors: Angus McLeod
 # url: https://github.com/civicallyhq/civically-user
 
-register_asset 'stylesheets/civically-user.scss'
+register_asset 'stylesheets/common/civically-user.scss'
+register_asset 'stylesheets/mobile/civically-user.scss'
 
 DiscourseEvent.on(:custom_wizard_ready) do
   CustomWizard::Wizard.add_wizard(File.read(File.join(
