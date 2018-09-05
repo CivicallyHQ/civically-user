@@ -1,4 +1,5 @@
 import { default as computed, observes } from 'ember-addons/ember-computed-decorators';
+import { placeUrl } from 'discourse/plugins/civically-place/discourse/lib/place-utilities';
 import { withPluginApi } from 'discourse/lib/plugin-api';
 
 export default {
@@ -80,6 +81,12 @@ export default {
           }
         },
       });
+
+      api.modifyClass('route:users', {
+        redirect() {
+          this.replaceWith(placeUrl(currentUser));
+        }
+      })
     });
   }
 };
