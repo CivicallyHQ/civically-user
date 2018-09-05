@@ -8,11 +8,9 @@
 register_asset 'stylesheets/civically-user.scss'
 
 DiscourseEvent.on(:custom_wizard_ready) do
-  if !CustomWizard::Wizard.find('welcome') || Rails.env.development?
-    CustomWizard::Wizard.add_wizard(File.read(File.join(
-      Rails.root, 'plugins', 'civically-user', 'config', 'wizards', 'welcome.json'
-    )))
-  end
+  CustomWizard::Wizard.add_wizard(File.read(File.join(
+    Rails.root, 'plugins', 'civically-user', 'config', 'wizards', 'welcome.json'
+  )))
 
   CustomWizard::Builder.add_step_handler('welcome') do |builder|
     if builder.updater && builder.updater.step && builder.updater.step.id === 'submit'
