@@ -42,7 +42,7 @@ en:
         title: "Civically Rules"
         accept: "I accept the rules"
         accepted: "Accepted"
-        accepted_message: "Thanks for accepting our rules. You can hide the rules by clicking 'x' in the top corner, or checking 'Hide rules' in your [interface preferences](/my/preferences/interface)."
+        accepted_message: "Thanks for accepting our rules. You can hide the rules by clicking 'x', or checking 'Hide rules' in your [interface preferences](/my/preferences/interface)."
         accepted_at: "You accepted [the rules](/faq) on {{dateTime}}."
         setting: "Hide rules"
         identification:
