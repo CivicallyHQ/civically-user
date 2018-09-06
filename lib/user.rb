@@ -22,6 +22,28 @@ class ::User
       nil
     end
   end
+
+  def hide_rules
+    if custom_fields['hide_rules']
+      custom_fields['hide_rules']
+    else
+      false
+    end
+  end
+
+  def accepted_rules
+    if custom_fields['accepted_rules']
+      custom_fields['accepted_rules']
+    else
+      false
+    end
+  end
+
+  def accepted_rules_at
+    UserCustomField.where(name: 'accepted_rules', user_id: self.id)
+      .pluck(:created_at)
+      .first
+  end
 end
 
 module ::CivicallyUser
@@ -33,6 +55,8 @@ end
 
 CivicallyUser::Engine.routes.draw do
   delete ':user/unread-list' => 'user#clear_unread_list'
+  put ":user/toggle-rules" => "user#toggle_rules"
+  put ":user/accept-rules" => "user#accept_rules"
 end
 
 Discourse::Application.routes.append do
@@ -61,6 +85,33 @@ class CivicallyUser::UserController < ::ApplicationController
     result = CivicallyUser::User.remove_unread_list(current_user, params[:list])
 
     if result
+      render json: success_json
+    else
+      render json: failed_json
+    end
+  end
+
+  def toggle_rules
+    params.require(:state)
+
+    user = current_user
+
+    user.custom_fields['hide_rules'] = ActiveModel::Type::Boolean.new.cast(params[:state])
+
+    if user.save_custom_fields(true)
+      render json: success_json
+    else
+      render json: failed_json
+    end
+  end
+
+  def accept_rules
+    user = current_user
+    user.custom_fields['accepted_rules'] = true
+
+    if user.save_custom_fields(true)
+      CivicallyChecklist::Checklist.update_item(user, 'rules', checked: true, hideable: true)
+
       render json: success_json
     else
       render json: failed_json

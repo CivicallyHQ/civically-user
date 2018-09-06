@@ -1,0 +1,36 @@
+<div class="app-widget-header">
+  <span>{{i18n 'user.rules.title'}}</span>
+  {{#if currentUser.accepted_rules}}
+    <a {{action 'hideRules'}} class="hide-rules">
+      {{#if hiding}}
+        {{loading-spinner size='small'}}
+      {{else}}
+        {{d-icon 'times'}}
+      {{/if}}
+    </a>
+  {{/if}}
+</div>
+
+<div class="app-widget-content">
+  <ol class="rules">
+    {{#each rules as |rule|}}
+      {{posting-rule rule=rule}}
+    {{/each}}
+  </ol>
+  <div class="gutter">
+    {{#unless currentUser.accepted_rules}}
+      {{d-button action="acceptRules" class="btn-small btn-primary" label='user.rules.accept'}}
+    {{/unless}}
+
+    {{#if accepting}}
+      {{loading-spinner size='small'}}
+    {{/if}}
+
+    {{#if showAcceptanceMessage}}
+      <span>{{d-icon 'check'}}{{i18n 'user.rules.accepted'}}</span>
+      <div class="rules-acceptance">
+        {{acceptanceMessage}}
+      </div>
+    {{/if}}
+  </div>
+</div>

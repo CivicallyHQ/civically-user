@@ -1,0 +1,12 @@
+<div class="control-group">
+  <label class='control-label'>{{i18n 'rules'}}</label>
+  {{#if acceptedMessage}}
+    <div class="accepted-rules-at">
+      {{acceptedMessage}}
+    </div>
+  {{/if}}
+  <div class="controls">
+    {{input type='checkbox' checked=model.custom_fields.hide_rules}}
+    <span>{{i18n 'user.rules.setting'}}</span>
+  </div>
+</div>

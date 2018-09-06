@@ -7,6 +7,9 @@ en:
       set_town:
         title: "Set your town"
         detail: "[Go to the place set page.](/place/set)"
+      rules:
+        title: "Accept the rules"
+        detaul: "To make a post on Civically, you need to accept the rules."
       post:
         title: "Make a post"
         detail: "Ask question, start a discussion, or post a reply."
@@ -58,7 +61,7 @@ en:
       description: "If you see a post that isn't appropriate, let us know. If you see something that doesn't work, let us know."
       tip:
         description: "*You can always email me at angus@civically.io.*"
-    three:
+    submit:
       title: "We'd love to hear your ideas."
       description: "If you have any ideas about how Civically could be better, tell us! We'd love to hear your thoughts."
       tip:

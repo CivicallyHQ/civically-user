@@ -38,6 +38,30 @@ en:
       linkedin:
         title: "LinkedIn"
         instructions: "url of your LinkedIn profile"
+      rules:
+        title: "Civically Rules"
+        accept: "I accept the rules"
+        accepted: "Accepted"
+        accepted_message: "Thanks for accepting our rules. You can hide the rules by clicking 'x' in the top corner, or checking 'Hide rules' in your [interface preferences](/my/preferences/interface)."
+        accepted_at: "You accepted [the rules](/faq) on {{dateTime}}."
+        setting: "Hide rules"
+        identification:
+          title: "No identification in legal matters."
+          description: >
+            Don't include any personally identifying information in posts about legal matters.
+            Don't try to identify any individal involved in a legal matter.
+        advice:
+          title: "No illegal advice."
+          description: >
+            Don't provide illegal advice, particularly illegal legal advice or illegal financial advice.
+        adverts:
+          title: "No commercial adverts."
+          description: >
+            Links to commercial, or profit-making entites or individuals are not allowed.
+        compliance:
+          title: "Follow the guidelines and terms."
+          description: >
+            All behaviour on Civically is governed by our [Guidelines](/guidelines) and [Terms of Service](/tos). Please take a moment to read them both.
 
     badges:
       basic_user:

@@ -47,13 +47,13 @@
       ]
     },
     {
-      "id": "three",
-      "key": "welcome.three",
+      "id": "submit",
+      "key": "welcome.submit",
       "banner": "/plugins/civically-private/images/ideas.png",
       "fields": [
         {
           "id": "tip",
-          "key": "welcome.three.tip",
+          "key": "welcome.submit.tip",
           "image": "/images/emoji/twitter/adult/4.png",
           "type": "text-only"
         }

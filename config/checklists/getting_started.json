@@ -18,6 +18,14 @@
       "active": true
     },
     {
+      "id": "rules",
+      "checked": false,
+      "checkable": false,
+      "hidden": false,
+      "hideable": false,
+      "active": true
+    },
+    {
       "id": "post",
       "checked": false,
       "checkable": false,

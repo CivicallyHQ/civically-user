@@ -37,18 +37,26 @@ after_initialize do
   load File.expand_path('../jobs/bulk_checklist_remove.rb', __FILE__)
   load File.expand_path('../jobs/bulk_unread_lists_update.rb', __FILE__)
 
+  User.register_custom_field_type('accepted_rules', :boolean)
+  User.register_custom_field_type('hide_rules', :boolean)
+
   DiscoursePluginRegistry.serialized_current_user_fields << "position"
-  add_to_serializer(:current_user, :position) { object.custom_fields["position"] }
   DiscoursePluginRegistry.serialized_current_user_fields << "linkedin"
-  add_to_serializer(:current_user, :position) { object.custom_fields["linkedin"] }
+  DiscoursePluginRegistry.serialized_current_user_fields << "hide_rules"
 
-  public_user_custom_fields = SiteSetting.public_user_custom_fields.split('|')
-  public_user_custom_fields.push('position') unless public_user_custom_fields.include?('position')
-  public_user_custom_fields.push('linkedin') unless public_user_custom_fields.include?('linkedin')
-  SiteSetting.public_user_custom_fields = public_user_custom_fields.join('|')
-
+  add_to_serializer(:current_user, :position) { object.custom_fields["position"] }
+  add_to_serializer(:current_user, :linkedin) { object.custom_fields["linkedin"] }
+  add_to_serializer(:current_user, :hide_rules) { object.hide_rules }
+  add_to_serializer(:current_user, :accepted_rules_at) { object.accepted_rules_at }
+  add_to_serializer(:current_user, :accepted_rules) { object.accepted_rules }
   add_to_serializer(:current_user, :unread_lists) { object.unread_lists }
   add_to_serializer(:current_user, :checklist) { CivicallyChecklist::Serializer.new(object, root: false).as_json }
+
+  if defined? register_editable_user_custom_field
+    register_editable_user_custom_field :position
+    register_editable_user_custom_field :linkedin
+    register_editable_user_custom_field :hide_rules
+  end
 
   getting_started_checklist_set = ::JSON.parse(File.read(File.join(
     Rails.root, 'plugins', 'civically-user', 'config', 'checklists', 'getting_started.json'
