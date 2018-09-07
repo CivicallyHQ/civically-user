@@ -9,7 +9,7 @@ en:
         detail: "[Go to the place set page.](/place/set)"
       rules:
         title: "Accept the rules"
-        detaul: "To make a post on Civically, you need to accept the rules."
+        detail: "To make a post on Civically, you need to accept the rules."
       post:
         title: "Make a post"
         detail: "Ask question, start a discussion, or post a reply."
@@ -55,12 +55,12 @@ en:
       title: "Posting is the best way to help."
       description: "Post about a legal problem you're having or had, reply to other people's posts and share any useful websites or materials you find."
       tip:
-        description: "*If you're worried about posting for any reason, talk with me about it.*"
+        description: "*We have a few important rules to follow when posting. More on that later.*"
     two:
       title: "If you see something, say something."
       description: "If you see a post that isn't appropriate, let us know. If you see something that doesn't work, let us know."
       tip:
-        description: "*You can always email me at angus@civically.io.*"
+        description: "*You can flag posts, message me on Civically or email me at angus@civically.io.*"
     submit:
       title: "We'd love to hear your ideas."
       description: "If you have any ideas about how Civically could be better, tell us! We'd love to hear your thoughts."
