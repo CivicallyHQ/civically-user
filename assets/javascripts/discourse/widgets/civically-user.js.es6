@@ -49,6 +49,8 @@ createWidget('checklist-item', {
   html(attrs, state) {
     const item = attrs.item;
 
+    console.log('running item');
+
     if (state.cookedDetail === null) {
       cookAsync(item.detail).then((cooked) => {
         state.cookedDetail = cooked;
@@ -264,6 +266,8 @@ if (requirejs.entries[navigationUtilitiesPath] && requirejs.entries[appWidgetPat
           listContents.push(this.buildBookmarks());
         }
       }
+
+      console.log('passed');
 
       let classes = 'widget-list';
 

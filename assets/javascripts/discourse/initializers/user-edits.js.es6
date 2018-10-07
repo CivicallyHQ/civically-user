@@ -86,7 +86,7 @@ export default {
         redirect() {
           this.replaceWith(placeUrl(currentUser));
         }
-      })
+      });
     });
   }
 };
