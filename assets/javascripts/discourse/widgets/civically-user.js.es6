@@ -48,15 +48,7 @@ createWidget('checklist-item', {
 
   html(attrs, state) {
     const item = attrs.item;
-
-    if (state.cookedDetail === null) {
-      cookAsync(item.detail).then((cooked) => {
-        state.cookedDetail = cooked;
-      });
-    }
-
     let contents = [];
-
     let checkIcon = state && state.checked ? 'check' : 'arrow-right';
     let checkClass = 'check-toggle';
 
@@ -83,9 +75,18 @@ createWidget('checklist-item', {
     ];
 
     if (state && state.showDetail) {
-      itemBody.push(h('div.check-detail',
-        new RawHtml({ html: `${state.cookedDetail}` })
-      ));
+
+      if (state.cookedDetail === null) {
+        itemBody.push(h('div.hidden-toggle.spinner.tiny'));
+        cookAsync(item.detail).then((cooked) => {
+          state.cookedDetail = cooked;
+          this.scheduleRerender();
+        });
+      } else {
+        itemBody.push(h('div.check-detail',
+          new RawHtml({ html: `${state.cookedDetail}` })
+        ));
+      }
     }
 
     contents.push(h('div.item-body', itemBody));
