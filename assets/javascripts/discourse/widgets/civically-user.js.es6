@@ -97,7 +97,7 @@ createWidget('checklist-item', {
       } else {
         contents.push(this.attach('button', {
           icon: 'eye-slash',
-          className: 'hidden-toggle',
+          className: 'hide',
           action: 'toggleHidden',
         }));
       }

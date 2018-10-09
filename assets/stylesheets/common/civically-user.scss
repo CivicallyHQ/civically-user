@@ -18,7 +18,7 @@
         cursor: pointer;
       }
 
-      &.hidden-toggle {
+      &.hide {
         align-self: flex-start;
         cursor: pointer;
       }
@@ -52,12 +52,8 @@
 
       &.checked {
         .item-body button:hover {
-          background: $success-low;
+          background: $success;
         }
-      }
-
-      &:hover .hidden-toggle {
-        visibility: visible;
       }
 
       &.hidden {
@@ -97,10 +93,6 @@
           }
         }
       }
-    }
-
-    .hidden-toggle {
-      visibility: hidden;
     }
   }
 
