@@ -144,6 +144,7 @@ class CivicallyChecklist::Checklist
   end
 
   def self.get_sets(user)
+    return {} unless user
     stored = PluginStore.get('user_checklist_sets', user.id)
     stored ? ::JSON.parse(stored) : {}
   end

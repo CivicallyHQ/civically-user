@@ -6,6 +6,6 @@ class CivicallyChecklist::Serializer < ::ApplicationSerializer
   end
 
   def can_add
-    sets['getting_started'] && sets['getting_started']['complete']
+    object.staff? || (sets['getting_started'] && sets['getting_started']['complete'])
   end
 end
